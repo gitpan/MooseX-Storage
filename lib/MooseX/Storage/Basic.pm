@@ -1,0 +1,99 @@
+
+package MooseX::Storage::Basic;
+use Moose::Role;
+
+use MooseX::Storage::Engine;
+
+our $VERSION = '0.01';
+
+sub pack {
+    my $self = shift;
+    my $e = MooseX::Storage::Engine->new( object => $self );
+    $e->collapse_object;
+}
+
+sub unpack {
+    my ( $class, $data ) = @_;
+    my $e = MooseX::Storage::Engine->new( class => $class );
+    $class->new( $e->expand_object($data) );
+}
+
+1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+MooseX::Storage::Basic - The simplest level of serialization
+
+=head1 SYNOPSIS
+
+  package Point;
+  use Moose;
+  use MooseX::Storage;
+  
+  with Storage;
+  
+  has 'x' => (is => 'rw', isa => 'Int');
+  has 'y' => (is => 'rw', isa => 'Int');
+  
+  1;
+  
+  my $p = Point->new(x => 10, y => 10);
+  
+  ## methods to pack/unpack an 
+  ## object in perl data structures
+  
+  # pack the class into a hash
+  $p->pack(); # { __CLASS__ => 'Point', x => 10, y => 10 }
+  
+  # unpack the hash into a class
+  my $p2 = Point->unpack({ __CLASS__ => 'Point', x => 10, y => 10 });
+
+=head1 DESCRIPTION
+
+This is the most basic form of serialization. This is used by default 
+but the exported C<Storage> function.
+
+=head1 METHODS
+
+=over 4
+
+=item B<pack>
+
+=item B<unpack ($data)>
+
+=back
+
+=head2 Introspection
+
+=over 4
+
+=item B<meta>
+
+=back
+
+=head1 BUGS
+
+All complex software has bugs lurking in it, and this module is no 
+exception. If you find a bug please either email me, or add the bug
+to cpan-RT.
+
+=head1 AUTHOR
+
+Chris Prather E<lt>chris.prather@iinteractive.comE<gt>
+
+Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2007 by Infinity Interactive, Inc.
+
+L<http://www.iinteractive.com>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
