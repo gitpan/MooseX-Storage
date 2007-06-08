@@ -1,5 +1,23 @@
 Revision history for MooseX-Storage
 
+0.02 Fri. June 8, 2007
+    * MooseX::Storage::Base::WithChecksum
+      - added a simple base role which makes a checksum of 
+        the data structure before packing, and checks the
+        checksum before unpacking.
+        - added tests for this
+
+    * MooseX::Storage::Engine
+      - better error reporting when cycles are found
+      - class names are now stored as the full identifier
+        (<class>-<version>-<authority>) and are checked
+        when they are expanded.
+        - added docs and tests for this
+
+    * MooseX::Storage::Engine::IO::(AtomicFile, File)
+      - added checks to make sure the file gets opened correctly
+        and dies if it does not.
+
 0.01  Mon. April 30, 2007
     This was Chris's idea originally (blame him), and 
     we expanded on it to create what you see here :)

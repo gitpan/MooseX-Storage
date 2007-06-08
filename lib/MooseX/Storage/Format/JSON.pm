@@ -2,21 +2,25 @@
 package MooseX::Storage::Format::JSON;
 use Moose::Role;
 
+no warnings 'once';
+
 use JSON::Any;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 requires 'pack';
 requires 'unpack';
 
 sub thaw {
-    my ( $class, $json ) = @_;
-    $class->unpack( JSON::Any->jsonToObj($json) );
+    my ( $class, $json, @args ) = @_;
+    local $JSON::UnMapping = 1;
+    $class->unpack( JSON::Any->jsonToObj($json), @args );
 }
 
 sub freeze {
-    my $self = shift;
-    JSON::Any->objToJson( $self->pack() );
+    my ( $self, @args ) = @_;
+    local $JSON::UnMapping = 1;
+    JSON::Any->objToJson( $self->pack(@args) );
 }
 
 1;

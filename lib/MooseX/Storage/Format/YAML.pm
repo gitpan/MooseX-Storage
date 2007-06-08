@@ -2,24 +2,28 @@
 package MooseX::Storage::Format::YAML;
 use Moose::Role;
 
+# When I add YAML::LibYAML
+# Tests break because tye YAML is invalid...?
+# -dcp
+
 use Best [
     [ qw[YAML::Syck YAML] ], 
     [ qw[Load Dump] ]
 ];
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 requires 'pack';
 requires 'unpack';
 
 sub thaw {
-    my ( $class, $json ) = @_;
-    $class->unpack( Load($json) );
+    my ( $class, $yaml, @args ) = @_;
+    $class->unpack( Load($yaml), @args );
 }
 
 sub freeze {
-    my $self = shift;
-    Dump( $self->pack() );
+    my ( $self, @args ) = @_;
+    Dump( $self->pack(@args) );
 }
 
 1;

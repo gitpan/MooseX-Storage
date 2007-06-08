@@ -12,6 +12,7 @@ WriteMakefile
                            'Test::Exception' => '0.21',
                            'IO::File' => '0',
                            'Best' => '0',
+                           'Test::Deep' => '0',
                            'Moose' => '0.20',
                            'JSON::Any' => '0'
                          }

@@ -4,13 +4,14 @@ use Moose;
 
 use IO::AtomicFile;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 extends 'MooseX::Storage::Engine::IO::File';
 
 sub store {
 	my ($self, $data) = @_;
-	my $fh = IO::AtomicFile->new($self->file, 'w');
+	my $fh = IO::AtomicFile->new($self->file, 'w')
+	    || confess "Unable to open file (" . $self->file . ") for storing : $!";
 	print $fh $data;
 	$fh->close() 
 	    || confess "Could not write atomic file (" . $self->file . ") because: $!";

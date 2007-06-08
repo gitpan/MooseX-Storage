@@ -1,6 +1,6 @@
 ---
 name: MooseX-Storage
-version: 0.01
+version: 0.02
 author:
   - 'Chris Prather E<lt>chris.prather@iinteractive.comE<gt>'
   - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
@@ -14,6 +14,7 @@ requires:
   JSON::Any: 0
   Moose: 0.20
 build_requires:
+  Test::Deep: 0
   Test::Exception: 0.21
   Test::More: 0.62
 provides:
@@ -22,25 +23,28 @@ provides:
     version: 0.01
   MooseX::Storage:
     file: lib/MooseX/Storage.pm
+    version: 0.02
+  MooseX::Storage::Base::WithChecksum:
+    file: lib/MooseX/Storage/Base/WithChecksum.pm
     version: 0.01
   MooseX::Storage::Basic:
     file: lib/MooseX/Storage/Basic.pm
     version: 0.01
   MooseX::Storage::Engine:
     file: lib/MooseX/Storage/Engine.pm
-    version: 0.01
+    version: 0.02
   MooseX::Storage::Engine::IO::AtomicFile:
     file: lib/MooseX/Storage/Engine/IO/AtomicFile.pm
-    version: 0.01
+    version: 0.02
   MooseX::Storage::Engine::IO::File:
     file: lib/MooseX/Storage/Engine/IO/File.pm
-    version: 0.01
+    version: 0.02
   MooseX::Storage::Format::JSON:
     file: lib/MooseX/Storage/Format/JSON.pm
-    version: 0.01
+    version: 0.02
   MooseX::Storage::Format::YAML:
     file: lib/MooseX/Storage/Format/YAML.pm
-    version: 0.01
+    version: 0.02
   MooseX::Storage::IO::AtomicFile:
     file: lib/MooseX/Storage/IO/AtomicFile.pm
     version: 0.01

@@ -1,4 +1,4 @@
-MooseX-Storage version 0.01
+MooseX-Storage version 0.02
 
 INSTALLATION
 
@@ -28,6 +28,9 @@ OPTIONAL DEPENDENCIES
     IO::AtomicFile
     Test::YAML::Valid
     Test::JSON
+    Digest
+    Digest::SHA1
+    Data::Dumper
 
 COPYRIGHT AND LICENCE
 
