@@ -1,6 +1,6 @@
 ---
 name: MooseX-Storage
-version: 0.02
+version: 0.03
 author:
   - 'Chris Prather E<lt>chris.prather@iinteractive.comE<gt>'
   - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
@@ -23,7 +23,7 @@ provides:
     version: 0.01
   MooseX::Storage:
     file: lib/MooseX/Storage.pm
-    version: 0.02
+    version: 0.03
   MooseX::Storage::Base::WithChecksum:
     file: lib/MooseX/Storage/Base/WithChecksum.pm
     version: 0.01
@@ -53,6 +53,9 @@ provides:
     version: 0.01
   MooseX::Storage::Meta::Attribute::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
+    version: 0.01
+  MooseX::Storage::Util:
+    file: lib/MooseX/Storage/Util.pm
     version: 0.01
 generated_by: Module::Build version 0.2805
 meta-spec:

@@ -1,5 +1,16 @@
 Revision history for MooseX-Storage
 
+0.03 Wed. June 27, 2007
+    * MooseX::Storage::Util
+        - this is a collection of useful tools 
+          for working with MooseX::Storage data
+            - added docs and test
+
+    * t/
+        - added test for a custom type handler
+        - fixed checksum test to skip if Digest::SHA1 
+          (our default) is not available
+
 0.02 Fri. June 8, 2007
     * MooseX::Storage::Base::WithChecksum
       - added a simple base role which makes a checksum of 

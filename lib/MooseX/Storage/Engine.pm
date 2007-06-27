@@ -2,7 +2,8 @@
 package MooseX::Storage::Engine;
 use Moose;
 
-our $VERSION = '0.02';
+our $VERSION   = '0.02';
+our $AUTHORITY = 'cpan:STEVAN';
 
 # the class marker when 
 # serializing an object. 
@@ -191,6 +192,8 @@ my %OBJECT_HANDLERS = (
         my ( $obj, $options ) = @_;
 #        ($obj->can('does') && $obj->does('MooseX::Storage::Basic'))
 #            || confess "Bad object ($obj) does not do MooseX::Storage::Basic role";
+        ($obj->can('pack'))
+            || confess "Object does not have a &pack method, cannot collapse";
         $obj->pack(%$options);
     },
 );
