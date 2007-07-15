@@ -7,7 +7,7 @@ use Data::Dumper ();
 
 use MooseX::Storage::Engine;
 
-our $VERSION   = '0.01';
+our $VERSION   = '0.02';
 our $AUTHORITY = 'cpan:STEVAN';
 
 our $DIGEST_MARKER = '__DIGEST__';
@@ -49,7 +49,18 @@ sub _digest_packed {
     {
         local $Data::Dumper::Indent   = 0;
         local $Data::Dumper::Sortkeys = 1;
-        $d->add( Data::Dumper::Dumper($collapsed) );
+        local $Data::Dumper::Terse    = 1;
+        local $Data::Dumper::Useqq    = 0;
+        local $Data::Dumper::Deparse  = 0; # FIXME?
+        my $str = Data::Dumper::Dumper($collapsed);
+        # NOTE:
+        # Canonicalize numbers to strings even if it 
+        # mangles numbers inside strings. It really 
+        # does not matter since its just the checksum
+        # anyway.
+        # - YK/SL
+        $str =~ s/(?<! ['"] ) \b (\d+) \b (?! ['"] )/'$1'/gx; 
+        $d->add( $str );
     }
 
     return $d->hexdigest;
