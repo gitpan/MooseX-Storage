@@ -2,7 +2,7 @@
 package MooseX::Storage::Engine;
 use Moose;
 
-our $VERSION   = '0.02';
+our $VERSION   = '0.03';
 our $AUTHORITY = 'cpan:STEVAN';
 
 # the class marker when 
@@ -56,12 +56,15 @@ sub expand_object {
 
 sub collapse_attribute {
     my ($self, $attr, $options)  = @_;
-    $self->storage->{$attr->name} = $self->collapse_attribute_value($attr, $options) || return;
+    my $value = $self->collapse_attribute_value($attr, $options);
+    return if !defined($value);
+    $self->storage->{$attr->name} = $value;
 }
 
 sub expand_attribute {
     my ($self, $attr, $data, $options)  = @_;
-    $self->storage->{$attr->name} = $self->expand_attribute_value($attr, $data->{$attr->name}, $options) || return;
+    my $value = $self->expand_attribute_value($attr, $data->{$attr->name}, $options);
+    $self->storage->{$attr->name} = defined $value ? $value : return;
 }
 
 sub collapse_attribute_value {
@@ -204,6 +207,7 @@ my %TYPES = (
     'Int'      => { expand => sub { shift }, collapse => sub { shift } },
     'Num'      => { expand => sub { shift }, collapse => sub { shift } },
     'Str'      => { expand => sub { shift }, collapse => sub { shift } },
+    'Bool'     => { expand => sub { shift }, collapse => sub { shift } },
     # These are the trickier ones, (see notes)
     # NOTE:
     # Because we are nice guys, we will check 
