@@ -11,6 +11,7 @@ WriteMakefile
                            'Test::More' => '0.62',
                            'Test::Exception' => '0.21',
                            'IO::File' => '0',
+                           'Storable' => '0',
                            'Best' => '0',
                            'Test::Deep' => '0',
                            'Moose' => '0.20',
