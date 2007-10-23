@@ -1,71 +1,20 @@
----
-name: MooseX-Storage
-version: 0.08
-author:
-  - 'Chris Prather E<lt>chris.prather@iinteractive.comE<gt>'
-  - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
-  - 'Yuval Kogman E<lt>yuval.kogman@iinteractive.comE<gt>'
+--- 
 abstract: An serialization framework for Moose classes
+author: Chris Prather <chris.prather@iinteractive.com>
+build_requires: 
+  Test::More: 0.42
+distribution_type: module
+generated_by: Module::Install version 0.67
 license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
-  Best: 0
-  IO::File: 0
-  JSON::Any: 0
+meta-spec: 
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
+name: MooseX-Storage
+no_index: 
+  directory: 
+    - ex
+    - inc
+    - t
+requires: 
   Moose: 0.20
-  Storable: 0
-build_requires:
-  Test::Deep: 0
-  Test::Exception: 0.21
-  Test::More: 0.62
-provides:
-  Moose::Meta::Attribute::Custom::DoNotSerialize:
-    file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: 0.01
-  MooseX::Storage:
-    file: lib/MooseX/Storage.pm
-    version: 0.08
-  MooseX::Storage::Base::WithChecksum:
-    file: lib/MooseX/Storage/Base/WithChecksum.pm
-    version: 0.02
-  MooseX::Storage::Basic:
-    file: lib/MooseX/Storage/Basic.pm
-    version: 0.01
-  MooseX::Storage::Engine:
-    file: lib/MooseX/Storage/Engine.pm
-    version: 0.03
-  MooseX::Storage::Engine::IO::AtomicFile:
-    file: lib/MooseX/Storage/Engine/IO/AtomicFile.pm
-    version: 0.02
-  MooseX::Storage::Engine::IO::File:
-    file: lib/MooseX/Storage/Engine/IO/File.pm
-    version: 0.02
-  MooseX::Storage::Format::JSON:
-    file: lib/MooseX/Storage/Format/JSON.pm
-    version: 0.03
-  MooseX::Storage::Format::Storable:
-    file: lib/MooseX/Storage/Format/Storable.pm
-    version: 0.01
-  MooseX::Storage::Format::YAML:
-    file: lib/MooseX/Storage/Format/YAML.pm
-    version: 0.02
-  MooseX::Storage::IO::AtomicFile:
-    file: lib/MooseX/Storage/IO/AtomicFile.pm
-    version: 0.01
-  MooseX::Storage::IO::File:
-    file: lib/MooseX/Storage/IO/File.pm
-    version: 0.01
-  MooseX::Storage::IO::StorableFile:
-    file: lib/MooseX/Storage/IO/StorableFile.pm
-    version: 0.01
-  MooseX::Storage::Meta::Attribute::DoNotSerialize:
-    file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: 0.01
-  MooseX::Storage::Util:
-    file: lib/MooseX/Storage/Util.pm
-    version: 0.02
-generated_by: Module::Build version 0.2808
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+version: 0.09
