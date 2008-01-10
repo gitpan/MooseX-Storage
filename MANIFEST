@@ -16,6 +16,7 @@ inc/Module/Install/WriteAll.pm
 lib/MooseX/Storage.pm
 lib/MooseX/Storage/Base/WithChecksum.pm
 lib/MooseX/Storage/Basic.pm
+lib/MooseX/Storage/Deferred.pm
 lib/MooseX/Storage/Engine.pm
 lib/MooseX/Storage/Engine/IO/AtomicFile.pm
 lib/MooseX/Storage/Engine/IO/File.pm
@@ -46,6 +47,8 @@ t/020_basic_yaml.t
 t/030_with_checksum.t
 t/040_basic_utils.t
 t/050_basic_storable.t
+t/060_basic_deferred.t
+t/061_basic_deferred_w_io.t
 t/100_io.t
 t/101_io_atomic.t
 t/102_io_storable_file.t

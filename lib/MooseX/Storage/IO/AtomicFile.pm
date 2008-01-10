@@ -10,8 +10,8 @@ our $AUTHORITY = 'cpan:STEVAN';
 with 'MooseX::Storage::IO::File';
 
 sub store {
-    my ( $self, $filename ) = @_;
-    MooseX::Storage::Engine::IO::AtomicFile->new( file => $filename )->store( $self->freeze() );
+    my ( $self, $filename, @args ) = @_;
+    MooseX::Storage::Engine::IO::AtomicFile->new( file => $filename )->store( $self->freeze(@args) );
 }
 
 1;
@@ -78,7 +78,7 @@ Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Infinity Interactive, Inc.
+Copyright 2007-2008 by Infinity Interactive, Inc.
 
 L<http://www.iinteractive.com>
 
