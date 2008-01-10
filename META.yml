@@ -3,6 +3,7 @@ abstract: An serialization framework for Moose classes
 author: 
   - Chris Prather <chris.prather@iinteractive.com>
 build_requires: 
+  Test::Exception: 0
   Test::More: 0.42
 distribution_type: module
 generated_by: Module::Install version 0.68
@@ -18,4 +19,4 @@ no_index:
     - t
 requires: 
   Moose: 0.20
-version: 0.10
+version: 0.11
