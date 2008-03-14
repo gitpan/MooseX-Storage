@@ -6,7 +6,7 @@ name 'MooseX-Storage';
 all_from 'lib/MooseX/Storage.pm';
 
 # Specific dependencies
-requires 'Moose' => '0.20';
+requires 'Moose' => '0.39';
 
 # you should have at least one
 # serialization format
@@ -31,6 +31,7 @@ feature 'File',
   'IO::File' => '0.1';
 
 build_requires 'Test::More'      => '0.42';
+build_requires 'Test::Deep'      => '0';
 build_requires 'Test::Exception' => '0';
 
 no_index 'directory' => 'ex';

@@ -1,20 +1,17 @@
 
-package MooseX::Storage::Meta::Attribute::DoNotSerialize;
-use Moose;
+package MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize;
+use Moose::Role;
 
-our $VERSION   = '0.02';
+our $VERSION   = '0.01';
 our $AUTHORITY = 'cpan:STEVAN';
-
-extends 'Moose::Meta::Attribute';
-   with 'MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize';
 
 # register this alias ...
-package Moose::Meta::Attribute::Custom::DoNotSerialize;
+package Moose::Meta::Attribute::Custom::Trait::DoNotSerialize;
 
-our $VERSION   = '0.02';
+our $VERSION   = '0.01';
 our $AUTHORITY = 'cpan:STEVAN';
 
-sub register_implementation { 'MooseX::Storage::Meta::Attribute::DoNotSerialize' }
+sub register_implementation { 'MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize' }
 
 1;
 
@@ -24,7 +21,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Storage::Meta::Attribute::DoNotSerialize - A custom meta-attribute to bypass serialization
+MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize - A custom meta-attribute-trait to bypass serialization
 
 =head1 SYNOPSIS
 
@@ -38,9 +35,9 @@ MooseX::Storage::Meta::Attribute::DoNotSerialize - A custom meta-attribute to by
   has 'y' => (is => 'rw', isa => 'Int');
   
   has 'foo' => (
-      metaclass => 'DoNotSerialize',
-      is        => 'rw',
-      isa       => 'CodeRef',
+      traits => [ 'DoNotSerialize' ],
+      is     => 'rw',
+      isa    => 'CodeRef',
   );
   
   1;
@@ -49,8 +46,8 @@ MooseX::Storage::Meta::Attribute::DoNotSerialize - A custom meta-attribute to by
 
 Sometimes you don't want a particular attribute to be part of the 
 serialization, in this case, you want to make sure that attribute 
-uses this custom meta-attribute. See the SYNOPSIS for a nice example
-that can be easily cargo-culted.
+uses this custom meta-attribute-trait. See the SYNOPSIS for a nice 
+example that can be easily cargo-culted.
 
 =head1 METHODS
 
@@ -69,8 +66,6 @@ exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
 =head1 AUTHOR
-
-Chris Prather E<lt>chris.prather@iinteractive.comE<gt>
 
 Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
 

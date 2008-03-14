@@ -28,7 +28,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Storage::IO::File
+MooseX::Storage::IO::File - A basic File I/O role
 
 =head1 SYNOPSIS
 
