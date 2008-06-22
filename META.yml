@@ -1,22 +1,23 @@
----
-abstract: 'An serialization framework for Moose classes'
-author:
-  - 'Chris Prather <chris.prather@iinteractive.com>'
-build_requires:
+--- 
+abstract: An serialization framework for Moose classes
+author: 
+  - Chris Prather <chris.prather@iinteractive.com>
+build_requires: 
   Test::Deep: 0
   Test::Exception: 0
   Test::More: 0.42
+  Test::TempDir: 0.02
 distribution_type: module
-generated_by: 'Module::Install version 0.73'
+generated_by: Module::Install version 0.70
 license: perl
-meta-spec:
+meta-spec: 
   url: http://module-build.sourceforge.net/META-spec-v1.3.html
   version: 1.3
 name: MooseX-Storage
-no_index:
-  directory:
+no_index: 
+  directory: 
     - inc
     - t
-requires:
+requires: 
   Moose: 0.39
-version: 0.13
+version: 0.14

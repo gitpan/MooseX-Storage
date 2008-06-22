@@ -4,6 +4,9 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::TempDir;
+use File::Spec::Functions;
+my $dir = tempdir;
 
 BEGIN {  
     eval "use JSON::Any";
@@ -27,7 +30,7 @@ BEGIN {
 	has 'object' => (is => 'ro', isa => 'Object');    
 }
 
-my $file = 'temp.json';
+my $file = catfile( $dir, 'temp.json' );
 
 {
     my $foo = Foo->new(
@@ -57,4 +60,3 @@ my $file = 'temp.json';
     is($foo->object->number, 2, '... got the right number (in the embedded object)');
 }
 
-unlink $file;
