@@ -54,5 +54,6 @@ t/102_io_storable_file.t
 t/103_io_storable_file_custom.t
 t/104_io_w_utf8.t
 t/105_io_atomic_w_utf8.t
+t/200_combined_in_roles.t
 t/pod-coverage.t
 t/pod.t
