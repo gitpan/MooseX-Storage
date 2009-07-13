@@ -1,10 +1,9 @@
-
 package MooseX::Storage::IO::File;
 use Moose::Role;
 
 use MooseX::Storage::Engine::IO::File;
 
-our $VERSION   = '0.19';
+our $VERSION   = '0.20';
 our $AUTHORITY = 'cpan:STEVAN';
 
 requires 'thaw';
@@ -19,6 +18,8 @@ sub store {
     my ( $self, $filename, @args ) = @_;
     MooseX::Storage::Engine::IO::File->new( file => $filename )->store( $self->freeze(@args) );
 }
+
+no Moose::Role;
 
 1;
 
@@ -35,21 +36,21 @@ MooseX::Storage::IO::File - A basic File I/O role
   package Point;
   use Moose;
   use MooseX::Storage;
-  
+
   with Storage('format' => 'JSON', 'io' => 'File');
-  
+
   has 'x' => (is => 'rw', isa => 'Int');
   has 'y' => (is => 'rw', isa => 'Int');
-  
+
   1;
-  
+
   my $p = Point->new(x => 10, y => 10);
-  
-  ## methods to load/store a class 
+
+  ## methods to load/store a class
   ## on the file system
-  
+
   $p->store('my_point.json');
-  
+
   my $p2 = Point->load('my_point.json');
 
 =head1 METHODS
@@ -72,7 +73,7 @@ MooseX::Storage::IO::File - A basic File I/O role
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

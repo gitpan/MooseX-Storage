@@ -1,5 +1,5 @@
 ---
-abstract: 'An serialization framework for Moose classes'
+abstract: 'A serialization framework for Moose classes'
 author:
   - 'Chris Prather <chris.prather@iinteractive.com>'
 build_requires:
@@ -11,7 +11,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.88'
+generated_by: 'Module::Install version 0.91'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -25,4 +25,5 @@ requires:
   Moose: 0.39
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.19
+  repository: git://git.moose.perl.org/gitmo/MooseX-Storage.git
+version: 0.20

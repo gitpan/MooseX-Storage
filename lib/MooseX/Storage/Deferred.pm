@@ -1,7 +1,7 @@
 package MooseX::Storage::Deferred;
 use Moose::Role;
 
-our $VERSION   = '0.19';
+our $VERSION   = '0.20';
 our $AUTHORITY = 'cpan:STEVAN';
 
 with 'MooseX::Storage::Basic';
@@ -61,6 +61,8 @@ sub store {
 
     $self->$method_to_call($filename, $type, @args);
 }
+
+no Moose::Role;
 
 1;
 
@@ -133,12 +135,12 @@ SYNOPSIS for more info)
 
 =back
 
-B<NOTE:> The B<StorableFile> I/O option is not supported, 
-this is because it does not mix well with options who also 
+B<NOTE:> The B<StorableFile> I/O option is not supported,
+this is because it does not mix well with options who also
 have a C<thaw> and C<freeze> methods like this. It is possible
-to probably work around this issue, but I don't currently 
+to probably work around this issue, but I don't currently
 have the need for it. If you need this supported, talk to me
-and I will see what I can do. 
+and I will see what I can do.
 
 =head1 METHODS
 

@@ -1,44 +1,41 @@
-
 package MooseX::Storage::Base::WithChecksum;
 use Moose::Role;
+
+with 'MooseX::Storage::Basic';
 
 use Digest       ();
 use Data::Dumper ();
 
-use MooseX::Storage::Engine;
-
-our $VERSION   = '0.19';
+our $VERSION   = '0.20';
 our $AUTHORITY = 'cpan:STEVAN';
 
 our $DIGEST_MARKER = '__DIGEST__';
 
-sub pack {
-    my ($self, @args ) = @_;
+around pack => sub {
+    my $orig = shift;
+    my $self = shift;
+    my @args = @_;
 
-    my $e = MooseX::Storage::Engine->new( object => $self );
+    my $collapsed = $self->$orig( @args );
 
-    my $collapsed = $e->collapse_object(@args);
-    
     $collapsed->{$DIGEST_MARKER} = $self->_digest_packed($collapsed, @args);
-    
-    return $collapsed;
-}
 
-sub unpack {
-    my ($class, $data, @args) = @_;
+    return $collapsed;
+};
+
+around unpack  => sub {
+    my ($orig, $class, $data, @args) = @_;
 
     # check checksum on data
-    
     my $old_checksum = delete $data->{$DIGEST_MARKER};
-    
+
     my $checksum = $class->_digest_packed($data, @args);
 
     ($checksum eq $old_checksum)
-        || confess "Bad Checksum got=($checksum) expected=($old_checksum)";    
+        || confess "Bad Checksum got=($checksum) expected=($old_checksum)";
 
-    my $e = MooseX::Storage::Engine->new(class => $class);
-    $class->new($e->expand_object($data, @args));
-}
+    $class->$orig( $data, @args );
+};
 
 
 sub _digest_packed {
@@ -54,12 +51,12 @@ sub _digest_packed {
         local $Data::Dumper::Deparse  = 0; # FIXME?
         my $str = Data::Dumper::Dumper($collapsed);
         # NOTE:
-        # Canonicalize numbers to strings even if it 
-        # mangles numbers inside strings. It really 
+        # Canonicalize numbers to strings even if it
+        # mangles numbers inside strings. It really
         # does not matter since its just the checksum
         # anyway.
         # - YK/SL
-        $str =~ s/(?<! ['"] ) \b (\d+) \b (?! ['"] )/'$1'/gx; 
+        $str =~ s/(?<! ['"] ) \b (\d+) \b (?! ['"] )/'$1'/gx;
         $d->add( $str );
     }
 
@@ -69,28 +66,30 @@ sub _digest_packed {
 sub _digest_object {
     my ( $self, %options ) = @_;
     my $digest_opts = $options{digest};
-    
-    $digest_opts = [ $digest_opts ] 
+
+    $digest_opts = [ $digest_opts ]
         if !ref($digest_opts) or ref($digest_opts) ne 'ARRAY';
-        
+
     my ( $d, @args ) = @$digest_opts;
 
     if ( ref $d ) {
         if ( $d->can("clone") ) {
             return $d->clone;
-        } 
+        }
         elsif ( $d->can("reset") ) {
             $d->reset;
             return $d;
-        } 
+        }
         else {
             die "Can't clone or reset digest object: $d";
         }
-    } 
+    }
     else {
         return Digest->new($d || "SHA1", @args);
     }
 }
+
+no Moose::Role;
 
 1;
 
@@ -104,11 +103,11 @@ MooseX::Storage::Base::WithChecksum - A more secure serialization role
 
 =head1 DESCRIPTION
 
-This is an early implementation of a more secure Storage role, 
-which does integrity checks on the data. It is still being 
-developed so I recommend using it with caution. 
+This is an early implementation of a more secure Storage role,
+which does integrity checks on the data. It is still being
+developed so I recommend using it with caution.
 
-Any thoughts, ideas or suggestions on improving our technique 
+Any thoughts, ideas or suggestions on improving our technique
 are very welcome.
 
 =head1 METHODS
@@ -131,7 +130,7 @@ are very welcome.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

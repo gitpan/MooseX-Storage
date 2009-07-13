@@ -28,7 +28,7 @@ BEGIN {
 	# This is not enforced yet, but will be some time in the next few
 	# releases once we can make sure it won't clash with custom
 	# Module::Install extensions.
-	$VERSION = '0.88';
+	$VERSION = '0.91';
 
 	# Storage for the pseudo-singleton
 	$MAIN    = undef;
@@ -278,11 +278,13 @@ sub load_extensions {
 
 	foreach my $rv ( $self->find_extensions($path) ) {
 		my ($file, $pkg) = @{$rv};
+                warn("FILE $file PKG $pkg");
 		next if $self->{pathnames}{$pkg};
-
+        warn("HERE");
 		local $@;
 		my $new = eval { require $file; $pkg->can('new') };
 		unless ( $new ) {
+            warn("NO NEW METHOD");
 			warn $@ if $@;
 			next;
 		}
@@ -319,7 +321,7 @@ sub find_extensions {
 				next if ($in_pod || /^=cut/);  # skip pod text
 				next if /^\s*#/;               # and comments
 				if ( m/^\s*package\s+($pkg)\s*;/i ) {
-					$pkg = $1;
+					$pkg = $1; warn("FOUND $1");
 					last;
 				}
 			}
