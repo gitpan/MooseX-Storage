@@ -3,8 +3,9 @@ package MooseX::Storage;
 use Moose qw(confess);
 
 use MooseX::Storage::Meta::Attribute::DoNotSerialize;
+use String::RewritePrefix ();
 
-our $VERSION   = '0.21';
+our $VERSION   = '0.22';
 our $AUTHORITY = 'cpan:STEVAN';
 
 sub import {
@@ -18,50 +19,69 @@ sub import {
     $pkg->meta->add_method('Storage' => __PACKAGE__->meta->find_method_by_name('_injected_storage_role_generator'));
 }
 
+my %HORRIBLE_GC_AVOIDANCE_HACK;
+
+sub __expand_role {
+    my ($base, $value) = @_;
+
+    return unless defined $value;
+
+    if (ref $value) {
+        my ($class, $param, $no) = @$value;
+        confess "too many args in arrayref role declaration" if defined $no;
+
+        $class = __expand_role($base => $class);
+        Class::MOP::load_class($class);
+
+        my $role = $class->meta->generate_role(parameters => $param);
+
+        $HORRIBLE_GC_AVOIDANCE_HACK{ $role->name } = $role;
+        return $role->name;
+    } else {
+        my $role = scalar String::RewritePrefix->rewrite(
+            {
+                ''  => "MooseX::Storage::$base\::",
+                '=' => '',
+            },
+            $value,
+        );
+
+        Class::MOP::load_class($role);
+        return $role;
+    }
+}
+
 sub _injected_storage_role_generator {
     my %params = @_;
 
-    if (exists $params{'base'}) {
-        $params{'base'} = ('Base::' . $params{'base'});
-    }
-    else {
-        $params{'base'} = 'Basic';
-    }
+    $params{base} = '=MooseX::Storage::Basic' unless defined $params{base};
 
-    my @roles = (
-        ('MooseX::Storage::' . $params{'base'}),
-    );
+    my @roles = __expand_role(Base => $params{base});
 
     # NOTE:
     # you don't have to have a format
     # role, this just means you dont
     # get anything other than pack/unpack
-    push @roles => 'MooseX::Storage::Format::' . $params{'format'}
-        if exists $params{'format'};
+    push @roles, __expand_role(Format => $params{format});
 
     # NOTE:
     # many IO roles don't make sense unless
     # you have also have a format role chosen
     # too, the exception being StorableFile
-    if (exists $params{'io'}) {
-        # NOTE:
-        # we dont need this code anymore, cause
-        # the role composition will catch it for
-        # us. This allows the StorableFile to work
-        #(exists $params{'format'})
-        #    || confess "You must specify a format role in order to use an IO role";
-        push @roles => 'MooseX::Storage::IO::' . $params{'io'};
-    }
+    #
+    # NOTE:
+    # we dont need this code anymore, cause
+    # the role composition will catch it for
+    # us. This allows the StorableFile to work
+    #(exists $params{'format'})
+    #    || confess "You must specify a format role in order to use an IO role";
+    push @roles, __expand_role(IO => $params{io});
 
     # Note:
     # These traits alter the behaviour of the engine, the user can
     # specify these per role-usage
     for my $trait ( @{ $params{'traits'} ||= [] } ) {
-        push @roles, 'MooseX::Storage::Traits::'.$trait;
-    }
-
-    for my $role ( @roles ) {
-        Class::MOP::load_class($role) or die "Could not load role ($role)";
+        push @roles, __expand_role(Traits => $trait);
     }
 
     return @roles;
@@ -250,6 +270,21 @@ load a specific set of MooseX::Storage roles to implement a specific
 combination of features. It is meant to make things easier, but it
 is by no means the only way. You can still compose your roles by
 hand if you like.
+
+By default, options are assumed to be short forms.  For example, this:
+
+  Storage(format => 'JSON');
+
+...will result in looking for MooseX::Storage::Format::JSON.  To use a role
+that is not under the default namespace prefix, start with an equal sign:
+
+  Storage(format => '=My::Private::JSONFormat');
+
+To use a parameterized role (for which, see L<MooseX::Role::Parameterized>) you
+can pass an arrayref of the role name (in short or long form, as above) and its
+parameters:
+
+  Storage(format => [ JSONpm => { json_opts => { pretty => 1 } } ]);
 
 =back
 

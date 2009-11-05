@@ -1,6 +1,8 @@
 Changes
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
+inc/Module/Install/AuthorRequires.pm
+inc/Module/Install/AuthorTests.pm
 inc/Module/Install/AutoInstall.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
@@ -47,6 +49,7 @@ t/008_do_not_serialize.t
 t/009_do_not_serialize_lazy.t
 t/010_basic_json.t
 t/011_basic_json_w_utf8.t
+t/012_param_json.t
 t/020_basic_yaml.t
 t/030_with_checksum.t
 t/040_basic_utils.t
@@ -61,5 +64,5 @@ t/103_io_storable_file_custom.t
 t/104_io_w_utf8.t
 t/105_io_atomic_w_utf8.t
 t/200_combined_in_roles.t
-t/pod-coverage.t
-t/pod.t
+t/author/pod-coverage.t
+t/author/pod.t
