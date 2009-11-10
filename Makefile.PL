@@ -45,6 +45,5 @@ author_requires 'Test::Pod::Coverage' => '1.08';
 
 resources repository => 'git://git.moose.perl.org/gitmo/MooseX-Storage.git';
 
-auto_install;
 WriteAll;
 
