@@ -48,6 +48,8 @@ t/010_basic_json.t
 t/011_basic_json_w_utf8.t
 t/012_param_json.t
 t/020_basic_yaml.t
+t/020_basic_yaml_syck.t
+t/020_basic_yaml_xs.t
 t/030_with_checksum.t
 t/040_basic_utils.t
 t/050_basic_storable.t
