@@ -22,9 +22,9 @@ no_index:
     - inc
     - t
 requires:
-  Moose: 0.87
+  Moose: 0.99
   String::RewritePrefix: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://git.moose.perl.org/gitmo/MooseX-Storage.git
-version: 0.24
+version: 0.25
