@@ -41,7 +41,7 @@ author_requires 'IO::File' => '0.1';
 
 author_tests 't/author';
 
-build_requires 'Test::More'      => '0.42';
+build_requires 'Test::More'      => '0.88';
 build_requires 'Test::Deep'      => '0';
 build_requires 'Test::Exception' => '0';
 build_requires 'Test::TempDir'   => '0.02';
@@ -49,7 +49,7 @@ build_requires 'Test::TempDir'   => '0.02';
 author_requires 'Test::Pod' => '1.14';
 author_requires 'Test::Pod::Coverage' => '1.08';
 
-resources repository => 'git://git.moose.perl.org/gitmo/MooseX-Storage.git';
+resources repository => 'git://git.moose.perl.org/MooseX-Storage.git';
 
 WriteAll;
 
