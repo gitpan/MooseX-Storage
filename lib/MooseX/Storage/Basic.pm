@@ -2,8 +2,9 @@ package MooseX::Storage::Basic;
 use Moose::Role;
 
 use MooseX::Storage::Engine;
+use String::RewritePrefix;
 
-our $VERSION   = '0.27';
+our $VERSION   = '0.28';
 our $AUTHORITY = 'cpan:STEVAN';
 
 sub pack {
@@ -25,20 +26,23 @@ sub unpack {
 sub _storage_get_engine_class {
     my ($self, %args) = @_;
 
-    my $default = 'MooseX::Storage::Engine';
-
-    return $default
+    return 'MooseX::Storage::Engine'
         unless (
             exists $args{engine_traits}
          && ref($args{engine_traits}) eq 'ARRAY'
          && scalar(@{$args{engine_traits}})
     );
 
-    my @roles = map { sprintf("%s::Trait::%s", $default, $_) }
-        @{$args{engine_traits}};
+    my @roles = String::RewritePrefix->rewrite(
+        {
+            '' => 'MooseX::Storage::Engine::Trait::',
+            '+' => '',
+        },
+        @{$args{engine_traits}}
+    );
 
     Moose::Meta::Class->create_anon_class(
-        superclasses => [$default],
+        superclasses => ['MooseX::Storage::Engine'],
         roles => [ @roles ],
         cache => 1,
     )->name;
