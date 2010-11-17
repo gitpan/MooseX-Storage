@@ -8,7 +8,6 @@ build_requires:
   Test::Exception: 0
   Test::More: 0.88
   Test::Requires: 0.05
-  Test::TempDir: 0.02
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -28,4 +27,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://git.moose.perl.org/MooseX-Storage.git
-version: 0.28
+version: 0.29
