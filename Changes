@@ -1,5 +1,13 @@
 Revision history for MooseX-Storage
 
+0.31
+  * Add example for add_custom_type_handler to the MooseX::Storage::Engine docs. (perigrin)
+
+  * Incorrect documentation for ->unpack method's inject parameter fixed.
+
+  * The test suite now uses Test::Fatal instead of Test::Exception (Karen
+    Etheridge).
+
 0.30
   * Make Makefile.PL features work again. RT#67170
 
