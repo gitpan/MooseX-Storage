@@ -6,7 +6,7 @@ with 'MooseX::Storage::Basic';
 use Digest       ();
 use Data::Dumper ();
 
-our $VERSION   = '0.31';
+our $VERSION   = '0.32';
 our $AUTHORITY = 'cpan:STEVAN';
 
 our $DIGEST_MARKER = '__DIGEST__';
@@ -85,7 +85,7 @@ sub _digest_object {
         }
     }
     else {
-        return Digest->new($d || "SHA1", @args);
+        return Digest->new($d || "SHA-1", @args);
     }
 }
 
