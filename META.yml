@@ -3,13 +3,13 @@ abstract: 'A serialization framework for Moose classes'
 author:
   - 'Chris Prather <chris.prather@iinteractive.com>'
 build_requires:
-  ExtUtils::MakeMaker: 6.36
+  ExtUtils::MakeMaker: 6.59
   Test::Deep: 0
   Test::Fatal: 0
   Test::More: 0.88
   Test::Requires: 0.05
 configure_requires:
-  ExtUtils::MakeMaker: 6.36
+  ExtUtils::MakeMaker: 6.59
 distribution_type: module
 dynamic_config: 1
 generated_by: 'Module::Install version 1.06'
@@ -22,10 +22,17 @@ no_index:
   directory:
     - inc
     - t
+recommends:
+  IO::File: 0
+  JSON::Any: 1.15
+  Storable: 0
+  Test::Deep::JSON: 0
+  YAML::Any: 0
 requires:
   Moose: 0.99
   String::RewritePrefix: 0
+  perl: 5.8.0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://git.moose.perl.org/MooseX-Storage.git
-version: 0.33
+version: 0.34

@@ -1,5 +1,3 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
@@ -43,9 +41,9 @@ BEGIN {
         object => Foo->new( number => 2 ),
     );
     isa_ok( $foo, 'Foo' );
-    
+
     my $packed = $foo->pack;
-    
+
     cmp_deeply(
         $packed,
         {
@@ -56,11 +54,11 @@ BEGIN {
             float     => 10.5,
             array     => [ 1 .. 10 ],
             hash      => { map { $_ => undef } ( 1 .. 10 ) },
-            object    => { 
-                            __CLASS__ => 'Foo', 
-                            __DIGEST__  => re('[0-9a-f]+'),               
-                            number    => 2 
-                         },            
+            object    => {
+                            __CLASS__ => 'Foo',
+                            __DIGEST__  => re('[0-9a-f]+'),
+                            number    => 2
+                         },
         },
         '... got the right frozen class'
     );
@@ -70,7 +68,7 @@ BEGIN {
         $foo2 = Foo->unpack($packed);
     }, undef, '... unpacked okay');
     isa_ok($foo2, 'Foo');
-    
+
     cmp_deeply(
         $foo2->pack,
         {
@@ -81,14 +79,14 @@ BEGIN {
             float     => 10.5,
             array     => [ 1 .. 10 ],
             hash      => { map { $_ => undef } ( 1 .. 10 ) },
-            object    => { 
-                            __CLASS__ => 'Foo', 
-                            __DIGEST__  => re('[0-9a-f]+'),               
-                            number    => 2 
-                         },            
+            object    => {
+                            __CLASS__ => 'Foo',
+                            __DIGEST__  => re('[0-9a-f]+'),
+                            number    => 2
+                         },
         },
         '... got the right frozen class'
-    );    
+    );
 }
 
 {

@@ -1,9 +1,9 @@
-#!/usr/bin/perl
 $|++;
 use strict;
 use warnings;
 
 use Test::More tests => 11;
+use Test::Deep;
 use Storable;
 
 BEGIN {
@@ -36,19 +36,19 @@ BEGIN {
         object => Foo->new( number => 2 ),
     );
     isa_ok( $foo, 'Foo' );
-    
+
     my $stored = $foo->freeze;
 
     my $struct = Storable::thaw($stored);
-    is_deeply(
+    cmp_deeply(
         $struct,
         {
             '__CLASS__' => 'Foo',
             'float'     => 10.5,
             'number'    => 10,
-            'string'    => 'foo',           
+            'string'    => 'foo',
             'array'     => [ 1 .. 10],
-            'hash'      => { map { $_ => undef } 1 .. 10 },            
+            'hash'      => { map { $_ => undef } 1 .. 10 },
             'object'    => {
                 '__CLASS__' => 'Foo',
                 'number' => 2
@@ -63,23 +63,23 @@ BEGIN {
         '__CLASS__' => 'Foo',
         'float'     => 10.5,
         'number'    => 10,
-        'string'    => 'foo',           
+        'string'    => 'foo',
         'array'     => [ 1 .. 10],
-        'hash'      => { map { $_ => undef } 1 .. 10 },            
+        'hash'      => { map { $_ => undef } 1 .. 10 },
         'object'    => {
             '__CLASS__' => 'Foo',
             'number' => 2
         },
     });
-    
+
     my $foo = Foo->thaw($stored);
     isa_ok( $foo, 'Foo' );
 
     is( $foo->number, 10,    '... got the right number' );
     is( $foo->string, 'foo', '... got the right string' );
     is( $foo->float,  10.5,  '... got the right float' );
-    is_deeply( $foo->array, [ 1 .. 10 ], '... got the right array' );
-    is_deeply(
+    cmp_deeply( $foo->array, [ 1 .. 10 ], '... got the right array' );
+    cmp_deeply(
         $foo->hash,
         { map { $_ => undef } ( 1 .. 10 ) },
         '... got the right hash'

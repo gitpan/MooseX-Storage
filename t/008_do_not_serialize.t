@@ -1,9 +1,8 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
 use Test::More tests => 13;
+use Test::Deep;
 use Test::Fatal;
 
 BEGIN {
@@ -20,31 +19,31 @@ BEGIN {
     has 'bar' => (
         metaclass => 'DoNotSerialize',
         is        => 'rw',
-        default   => sub { 'BAR' }        
+        default   => sub { 'BAR' }
     );
-    
+
     has 'baz' => (
         traits  => [ 'DoNotSerialize' ],
         is      => 'rw',
-        default => sub { 'BAZ' }        
-    );    
-    
+        default => sub { 'BAZ' }
+    );
+
     has 'gorch' => (
-        is      => 'rw', 
+        is      => 'rw',
         default => sub { 'GORCH' }
-    );    
+    );
 
     1;
 }
 
 {   my $foo = Foo->new;
     isa_ok($foo, 'Foo');
-    
+
     is($foo->bar, 'BAR', '... got the value we expected');
     is($foo->baz, 'BAZ', '... got the value we expected');
     is($foo->gorch, 'GORCH', '... got the value we expected');
-    
-    is_deeply(
+
+    cmp_deeply(
         $foo->pack,
         {
             __CLASS__ => 'Foo',
@@ -67,36 +66,36 @@ BEGIN {
         is          => 'rw',
         isa         => 'Object',        # type constraint is important
     );
-    
+
     has zot => (
         default     => sub { $$ },
         is          => 'rw',
-    );        
+    );
 }
 
 {   my $obj = bless {};
     my $bar = Bar->new( foo => $obj );
-    
+
     ok( $bar,                   "New object created" );
     is( $bar->foo, $obj,        "   ->foo => $obj" );
     is( $bar->zot, $$,          "   ->zot => $$" );
-    
+
     my $bpack = $bar->pack;
-    is_deeply(
+    cmp_deeply(
         $bpack,
         {   __CLASS__   => 'Bar',
             zot         => $$,
         },                      "   Packed correctly" );
-        
+
     eval { Bar->unpack( $bpack ) };
     ok( $@,                     "   Unpack without required attribute fails" );
     like( $@, qr/foo/,          "       Proper error recorded" );
-        
+
     my $bar2 = Bar->unpack( $bpack, inject => { foo => bless {} } );
-    ok( $bar2,                  "   Unpacked correctly with foo => Object"); 
-}        
-            
-        
-        
-    
+    ok( $bar2,                  "   Unpacked correctly with foo => Object");
+}
+
+
+
+
 

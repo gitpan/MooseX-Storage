@@ -1,17 +1,16 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
 use Test::More;
+use Test::Deep;
 
 use Test::Requires {
-    'Test::JSON' => 0.01, # skip all if not installed
     'JSON::Any' => 0.01,
+    'Test::Deep::JSON' => 0,
 };
 
 BEGIN {
-    plan tests => 12;
+    plan tests => 11;
     use_ok('MooseX::Storage');
 }
 
@@ -44,15 +43,22 @@ BEGIN {
 
     my $json = $foo->freeze;
 
-    is_valid_json($json, '.. this is valid JSON');
-
-
-    is_json(
+    cmp_deeply(
         $json,
-'{"array":[1,2,3,4,5,6,7,8,9,10],"hash":{"6":null,"3":null,"7":null,"9":null,"2":null,"8":null,"1":null,"4":null,"10":null,"5":null},"float":10.5,"object":{"number":2,"__CLASS__":"Foo"},"number":10,"__CLASS__":"Foo","string":"foo"}',
-        '... got the right JSON'
+        json({
+            number => 10,
+            string => 'foo',
+            float => 10.5,
+            array => [ 1 .. 10 ],
+            hash => { map { $_ => undef } (1 .. 10) },
+            __CLASS__ => 'Foo',
+            object => {
+                number => 2,
+                __CLASS__ => 'Foo'
+            },
+        }),
+        'is valid JSON and content matches',
     );
-
 }
 
 {
@@ -65,8 +71,8 @@ BEGIN {
     is( $foo->number, 10,    '... got the right number' );
     is( $foo->string, 'foo', '... got the right string' );
     is( $foo->float,  10.5,  '... got the right float' );
-    is_deeply( $foo->array, [ 1 .. 10 ], '... got the right array' );
-    is_deeply(
+    cmp_deeply( $foo->array, [ 1 .. 10 ], '... got the right array' );
+    cmp_deeply(
         $foo->hash,
         { map { $_ => undef } ( 1 .. 10 ) },
         '... got the right hash'

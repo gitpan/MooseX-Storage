@@ -1,9 +1,8 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
 use Test::More tests => 47;
+use Test::Deep;
 
 BEGIN {
     use_ok('MooseX::Storage');
@@ -11,8 +10,8 @@ BEGIN {
 
 =pod
 
-This test checks the single level 
-expansion and collpasing of the 
+This test checks the single level
+expansion and collpasing of the
 ArrayRef and HashRef type handlers.
 
 =cut
@@ -23,30 +22,30 @@ ArrayRef and HashRef type handlers.
     use MooseX::Storage;
 
     with Storage;
-    
+
     has 'number' => (is => 'ro', isa => 'Int');
-    
+
     package Foo;
     use Moose;
     use MooseX::Storage;
 
-    with Storage;    
+    with Storage;
 
-    has 'bars' => ( 
-        is  => 'ro', 
-        isa => 'ArrayRef' 
+    has 'bars' => (
+        is  => 'ro',
+        isa => 'ArrayRef'
     );
-    
+
     package Baz;
     use Moose;
     use MooseX::Storage;
 
-    with Storage;    
+    with Storage;
 
-    has 'bars' => ( 
-        is  => 'ro', 
-        isa => 'HashRef' 
-    );    
+    has 'bars' => (
+        is  => 'ro',
+        isa => 'HashRef'
+    );
 }
 
 {
@@ -54,19 +53,19 @@ ArrayRef and HashRef type handlers.
         bars => [ map { Bar->new(number => $_) } (1 .. 10) ]
     );
     isa_ok( $foo, 'Foo' );
-    
-    is_deeply(
+
+    cmp_deeply(
         $foo->pack,
         {
             __CLASS__ => 'Foo',
-            bars      => [ 
+            bars      => [
                 map {
                   {
                       __CLASS__ => 'Bar',
                       number    => $_,
-                  }  
+                  }
                 } (1 .. 10)
-            ],           
+            ],
         },
         '... got the right frozen class'
     );
@@ -76,15 +75,15 @@ ArrayRef and HashRef type handlers.
     my $foo = Foo->unpack(
         {
             __CLASS__ => 'Foo',
-            bars      => [ 
+            bars      => [
                 map {
                   {
                       __CLASS__ => 'Bar',
                       number    => $_,
-                  }  
+                  }
                 } (1 .. 10)
-            ],           
-        }      
+            ],
+        }
     );
     isa_ok( $foo, 'Foo' );
 
@@ -100,8 +99,8 @@ ArrayRef and HashRef type handlers.
         bars => { map { ($_ => Bar->new(number => $_)) } (1 .. 10) }
     );
     isa_ok( $baz, 'Baz' );
-    
-    is_deeply(
+
+    cmp_deeply(
         $baz->pack,
         {
             __CLASS__ => 'Baz',
@@ -110,9 +109,9 @@ ArrayRef and HashRef type handlers.
                   ($_ => {
                       __CLASS__ => 'Bar',
                       number    => $_,
-                  })  
+                  })
                 } (1 .. 10)
-            },           
+            },
         },
         '... got the right frozen class'
     );
@@ -127,10 +126,10 @@ ArrayRef and HashRef type handlers.
                   ($_ => {
                       __CLASS__ => 'Bar',
                       number    => $_,
-                  })  
+                  })
                 } (1 .. 10)
-            },           
-        }      
+            },
+        }
     );
     isa_ok( $baz, 'Baz' );
 

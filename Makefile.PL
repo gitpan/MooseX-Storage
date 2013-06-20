@@ -7,6 +7,8 @@ use Module::Install::AuthorTests;
 name 'MooseX-Storage';
 all_from 'lib/MooseX/Storage.pm';
 
+perl_version '5.008';
+
 # Specific dependencies
 requires 'Moose' => '0.99';
 requires 'String::RewritePrefix';
@@ -19,20 +21,24 @@ auto_install; # Needed for features to work. RT#67170
 feature 'JSON',
   -default     => 1,
   'JSON::Any'  => '1.15',
-  'Test::JSON' => '0.06';
+  'Test::Deep::JSON' => '0';
+recommends 'JSON::Any' => '1.15';
+recommends 'Test::Deep::JSON';
 
 author_requires 'JSON::Any'  => '1.15';
-author_requires 'Test::JSON' => '0.06';
+author_requires 'Test::Deep::JSON' => '0';
 
 feature 'YAML',
   -default            => 1,
   'YAML::Any'         => '0';
 author_requires 'YAML::Any';
+recommends 'YAML::Any';
 
 feature 'Storable',
   -default   => 1,
   'Storable' => '0';
 author_requires 'Storable';
+recommends 'Storable';
 
 # and the ability to save the
 # file to disk
@@ -40,6 +46,7 @@ feature 'File',
   -default   => 1,
   'IO::File' => '0.1';
 author_requires 'IO::File' => '0.1';
+recommends 'IO::File';
 
 author_tests 't/author';
 

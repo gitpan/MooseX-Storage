@@ -1,9 +1,8 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
 use Test::More tests => 11;
+use Test::Deep;
 
 BEGIN {
     use_ok('MooseX::Storage');
@@ -11,8 +10,8 @@ BEGIN {
 
 =pod
 
-This extends the 001_basic test to 
-show that subtypes will DWIM in most 
+This extends the 001_basic test to
+show that subtypes will DWIM in most
 cases.
 
 =cut
@@ -26,25 +25,25 @@ cases.
 
     use Scalar::Util 'looks_like_number';
 
-    with Storage;    
-    
-    subtype 'Natural' 
+    with Storage;
+
+    subtype 'Natural'
         => as 'Int'
         => where { $_ > 0 };
-        
-    subtype 'HalfNum' 
+
+    subtype 'HalfNum'
         => as 'Num'
-        => where { "$_" =~ /\.5$/ };    
-    
+        => where { "$_" =~ /\.5$/ };
+
     subtype 'FooString'
         => as 'Str'
         => where { lc($_) eq 'foo' };
-        
-    subtype 'IntArray' 
+
+    subtype 'IntArray'
         => as 'ArrayRef'
         => where { scalar grep { looks_like_number($_) } @{$_} };
 
-    subtype 'UndefHash' 
+    subtype 'UndefHash'
         => as 'HashRef'
         => where { scalar grep { !defined($_) } values %{$_} };
 
@@ -66,8 +65,8 @@ cases.
         object => Foo->new( number => 2 ),
     );
     isa_ok( $foo, 'Foo' );
-    
-    is_deeply(
+
+    cmp_deeply(
         $foo->pack,
         {
             __CLASS__ => 'Foo',
@@ -76,10 +75,10 @@ cases.
             float     => 10.5,
             array     => [ 1 .. 10 ],
             hash      => { map { $_ => undef } ( 1 .. 10 ) },
-            object    => { 
-                            __CLASS__ => 'Foo',                
-                            number    => 2 
-                         },            
+            object    => {
+                            __CLASS__ => 'Foo',
+                            number    => 2
+                         },
         },
         '... got the right frozen class'
     );
@@ -94,19 +93,19 @@ cases.
             float     => 10.5,
             array     => [ 1 .. 10 ],
             hash      => { map { $_ => undef } ( 1 .. 10 ) },
-            object    => { 
-                            __CLASS__ => 'Foo',                
-                            number    => 2 
-                         },            
-        }        
+            object    => {
+                            __CLASS__ => 'Foo',
+                            number    => 2
+                         },
+        }
     );
     isa_ok( $foo, 'Foo' );
 
     is( $foo->number, 10,    '... got the right number' );
     is( $foo->string, 'foo', '... got the right string' );
     is( $foo->float,  10.5,  '... got the right float' );
-    is_deeply( $foo->array, [ 1 .. 10 ], '... got the right array' );
-    is_deeply(
+    cmp_deeply( $foo->array, [ 1 .. 10 ], '... got the right array' );
+    cmp_deeply(
         $foo->hash,
         { map { $_ => undef } ( 1 .. 10 ) },
         '... got the right hash'
