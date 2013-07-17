@@ -1,4 +1,10 @@
 package MooseX::Storage::Engine::Trait::DisableCycleDetection;
+{
+  $MooseX::Storage::Engine::Trait::DisableCycleDetection::VERSION = '0.36'; # TRIAL
+}
+BEGIN {
+  $MooseX::Storage::Engine::Trait::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
+}
 use Moose::Role;
 
 around 'check_for_cycle_in_collapse' => sub {

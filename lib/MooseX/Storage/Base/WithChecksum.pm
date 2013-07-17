@@ -1,13 +1,16 @@
 package MooseX::Storage::Base::WithChecksum;
+{
+  $MooseX::Storage::Base::WithChecksum::VERSION = '0.36'; # TRIAL
+}
+BEGIN {
+  $MooseX::Storage::Base::WithChecksum::AUTHORITY = 'cpan:STEVAN';
+}
 use Moose::Role;
 
 with 'MooseX::Storage::Basic';
 
 use Digest       ();
 use Data::Dumper ();
-
-our $VERSION   = '0.35';
-our $AUTHORITY = 'cpan:STEVAN';
 
 our $DIGEST_MARKER = '__DIGEST__';
 

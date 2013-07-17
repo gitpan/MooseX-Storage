@@ -1,8 +1,11 @@
 package MooseX::Storage::Traits::DisableCycleDetection;
+{
+  $MooseX::Storage::Traits::DisableCycleDetection::VERSION = '0.36'; # TRIAL
+}
+BEGIN {
+  $MooseX::Storage::Traits::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
+}
 use Moose::Role;
-
-our $VERSION   = '0.35';
-our $AUTHORITY = 'cpan:STEVAN';
 
 requires 'pack';
 requires 'unpack';
@@ -59,6 +62,8 @@ references, so if you know what you are doing, you can bypass this check.
 
 This trait is applied to all objects that inherit from it. To use this
 on a per-case basis, see C<disable_cycle_check> in L<MooseX::Storage::Basic>.
+
+=for stopwords culted
 
 See the SYNOPSIS for a nice example that can be easily cargo-culted.
 

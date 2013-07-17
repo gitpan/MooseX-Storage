@@ -1,4 +1,10 @@
 package MooseX::Storage::Format::YAML;
+{
+  $MooseX::Storage::Format::YAML::VERSION = '0.36'; # TRIAL
+}
+BEGIN {
+  $MooseX::Storage::Format::YAML::AUTHORITY = 'cpan:STEVAN';
+}
 use Moose::Role;
 
 # When I add YAML::LibYAML
@@ -6,9 +12,6 @@ use Moose::Role;
 # -dcp
 
 use YAML::Any qw(Load Dump);
-
-our $VERSION   = '0.35';
-our $AUTHORITY = 'cpan:STEVAN';
 
 requires 'pack';
 requires 'unpack';

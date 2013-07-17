@@ -1,8 +1,11 @@
 package MooseX::Storage::Deferred;
+{
+  $MooseX::Storage::Deferred::VERSION = '0.36'; # TRIAL
+}
+BEGIN {
+  $MooseX::Storage::Deferred::AUTHORITY = 'cpan:STEVAN';
+}
 use Moose::Role;
-
-our $VERSION   = '0.35';
-our $AUTHORITY = 'cpan:STEVAN';
 
 with 'MooseX::Storage::Basic';
 
@@ -67,6 +70,8 @@ __END__
 
 =head1 NAME
 
+=for stopwords undecisive
+
 MooseX::Storage::Deferred - A role for undecisive programmers
 
 =head1 SYNOPSIS
@@ -74,8 +79,6 @@ MooseX::Storage::Deferred - A role for undecisive programmers
   package Point;
   use Moose;
   use MooseX::Storage;
-
-  our $VERSION = '0.01';
 
   with 'MooseX::Storage::Deferred';
 
@@ -116,6 +119,8 @@ SYNOPSIS for more info)
 =over 4
 
 =item I<JSON>
+
+=for stopwords JSONpm
 
 =item I<JSONpm>
 

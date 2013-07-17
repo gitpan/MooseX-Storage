@@ -1,10 +1,13 @@
 package MooseX::Storage::IO::AtomicFile;
+{
+  $MooseX::Storage::IO::AtomicFile::VERSION = '0.36'; # TRIAL
+}
+BEGIN {
+  $MooseX::Storage::IO::AtomicFile::AUTHORITY = 'cpan:STEVAN';
+}
 use Moose::Role;
 
 use MooseX::Storage::Engine::IO::AtomicFile;
-
-our $VERSION   = '0.35';
-our $AUTHORITY = 'cpan:STEVAN';
 
 with 'MooseX::Storage::IO::File';
 

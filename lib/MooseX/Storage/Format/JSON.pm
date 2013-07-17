@@ -1,13 +1,16 @@
 package MooseX::Storage::Format::JSON;
+{
+  $MooseX::Storage::Format::JSON::VERSION = '0.36'; # TRIAL
+}
+BEGIN {
+  $MooseX::Storage::Format::JSON::AUTHORITY = 'cpan:STEVAN';
+}
 use Moose::Role;
 
 no warnings 'once';
 
 use JSON::Any;
 use utf8 ();
-
-our $VERSION   = '0.35';
-our $AUTHORITY = 'cpan:STEVAN';
 
 requires 'pack';
 requires 'unpack';
