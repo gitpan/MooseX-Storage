@@ -1,6 +1,6 @@
 package MooseX::Storage::Base::WithChecksum;
 {
-  $MooseX::Storage::Base::WithChecksum::VERSION = '0.37'; # TRIAL
+  $MooseX::Storage::Base::WithChecksum::VERSION = '0.38'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Base::WithChecksum::AUTHORITY = 'cpan:STEVAN';

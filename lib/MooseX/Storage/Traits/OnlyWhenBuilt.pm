@@ -1,6 +1,6 @@
 package MooseX::Storage::Traits::OnlyWhenBuilt;
 {
-  $MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.37'; # TRIAL
+  $MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.38'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Traits::OnlyWhenBuilt::AUTHORITY = 'cpan:STEVAN';

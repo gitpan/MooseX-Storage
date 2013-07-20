@@ -1,7 +1,7 @@
 
 package MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize;
 {
-  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.37'; # TRIAL
+  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.38'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
@@ -11,7 +11,7 @@ use Moose::Role;
 # register this alias ...
 package Moose::Meta::Attribute::Custom::Trait::DoNotSerialize;
 {
-  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.37'; # TRIAL
+  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.38'; # TRIAL
 }
 BEGIN {
   $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
