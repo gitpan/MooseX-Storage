@@ -1,13 +1,12 @@
 package MooseX::Storage::Engine::IO::File;
 {
-  $MooseX::Storage::Engine::IO::File::VERSION = '0.36'; # TRIAL
+  $MooseX::Storage::Engine::IO::File::VERSION = '0.37'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Engine::IO::File::AUTHORITY = 'cpan:STEVAN';
 }
 use Moose;
 
-use utf8 ();
 use IO::File;
 
 has 'file' => (

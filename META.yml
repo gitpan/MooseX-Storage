@@ -50,70 +50,70 @@ optional_features:
 provides:
   Moose::Meta::Attribute::Custom::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: 0.36
+    version: 0.37
   Moose::Meta::Attribute::Custom::Trait::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage:
     file: lib/MooseX/Storage.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Base::WithChecksum:
     file: lib/MooseX/Storage/Base/WithChecksum.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Basic:
     file: lib/MooseX/Storage/Basic.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Deferred:
     file: lib/MooseX/Storage/Deferred.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Engine:
     file: lib/MooseX/Storage/Engine.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Engine::IO::AtomicFile:
     file: lib/MooseX/Storage/Engine/IO/AtomicFile.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Engine::IO::File:
     file: lib/MooseX/Storage/Engine/IO/File.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Engine::Trait::DisableCycleDetection:
     file: lib/MooseX/Storage/Engine/Trait/DisableCycleDetection.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Engine::Trait::OnlyWhenBuilt:
     file: lib/MooseX/Storage/Engine/Trait/OnlyWhenBuilt.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Format::JSON:
     file: lib/MooseX/Storage/Format/JSON.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Format::Storable:
     file: lib/MooseX/Storage/Format/Storable.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Format::YAML:
     file: lib/MooseX/Storage/Format/YAML.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::IO::AtomicFile:
     file: lib/MooseX/Storage/IO/AtomicFile.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::IO::File:
     file: lib/MooseX/Storage/IO/File.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::IO::StorableFile:
     file: lib/MooseX/Storage/IO/StorableFile.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Meta::Attribute::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Traits::DisableCycleDetection:
     file: lib/MooseX/Storage/Traits/DisableCycleDetection.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Traits::OnlyWhenBuilt:
     file: lib/MooseX/Storage/Traits/OnlyWhenBuilt.pm
-    version: 0.36
+    version: 0.37
   MooseX::Storage::Util:
     file: lib/MooseX/Storage/Util.pm
-    version: 0.36
+    version: 0.37
 recommends:
   Digest::HMAC: 0
   Digest::SHA: 0
@@ -123,13 +123,16 @@ recommends:
   Storable: 0
   YAML::Any: 0
 requires:
+  Data::Dumper: 0
+  Digest: 0
   Moose: 0.99
+  Scalar::Util: 0
   String::RewritePrefix: 0
   perl: 5.008
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Storage
   repository: git://git.moose.perl.org/MooseX-Storage.git
-version: 0.36
+version: 0.37
 x_Dist_Zilla:
   perl:
     version: 5.019001
@@ -138,10 +141,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::ETHER/Git::NextVersion'
       version: 2.014
-    -
-      class: Dist::Zilla::Plugin::GithubMeta
-      name: '@Author::ETHER/GithubMeta'
-      version: 0.28
     -
       class: Dist::Zilla::Plugin::AutoMetaResources
       name: '@Author::ETHER/AutoMetaResources'
@@ -197,7 +196,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Compile
       name: '@Author::ETHER/Test::Compile'
-      version: 2.002
+      version: 2.008
     -
       class: Dist::Zilla::Plugin::Test::CheckDeps
       name: '@Author::ETHER/Test::CheckDeps'
@@ -339,10 +338,6 @@ x_Dist_Zilla:
       name: '@Author::ETHER/Git::Tag'
       version: 2.014
     -
-      class: Dist::Zilla::Plugin::GitHub::Update
-      name: '@Author::ETHER/GitHub::Update'
-      version: 0.34
-    -
       class: Dist::Zilla::Plugin::Git::Push
       name: '@Author::ETHER/Git::Push'
       version: 2.014
@@ -389,35 +384,35 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: JSON-Runtime
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: JSON-RuntimeRecommends
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: JSON-Test
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: YAML-Runtime
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: YAML-RuntimeRecommends
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: YAML-Test
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: Storable
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       name: File
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'

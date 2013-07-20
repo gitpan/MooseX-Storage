@@ -1,6 +1,6 @@
 package MooseX::Storage::Format::YAML;
 {
-  $MooseX::Storage::Format::YAML::VERSION = '0.36'; # TRIAL
+  $MooseX::Storage::Format::YAML::VERSION = '0.37'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Format::YAML::AUTHORITY = 'cpan:STEVAN';

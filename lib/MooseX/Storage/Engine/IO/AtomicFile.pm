@@ -1,13 +1,12 @@
 package MooseX::Storage::Engine::IO::AtomicFile;
 {
-  $MooseX::Storage::Engine::IO::AtomicFile::VERSION = '0.36'; # TRIAL
+  $MooseX::Storage::Engine::IO::AtomicFile::VERSION = '0.37'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Engine::IO::AtomicFile::AUTHORITY = 'cpan:STEVAN';
 }
 use Moose;
 
-use utf8 ();
 use IO::AtomicFile;
 
 extends 'MooseX::Storage::Engine::IO::File';

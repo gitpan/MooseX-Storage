@@ -1,6 +1,6 @@
 package MooseX::Storage::Engine;
 {
-  $MooseX::Storage::Engine::VERSION = '0.36'; # TRIAL
+  $MooseX::Storage::Engine::VERSION = '0.37'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Engine::AUTHORITY = 'cpan:STEVAN';

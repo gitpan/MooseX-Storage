@@ -1,6 +1,6 @@
 package MooseX::Storage::Meta::Attribute::DoNotSerialize;
 {
-  $MooseX::Storage::Meta::Attribute::DoNotSerialize::VERSION = '0.36'; # TRIAL
+  $MooseX::Storage::Meta::Attribute::DoNotSerialize::VERSION = '0.37'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Meta::Attribute::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
@@ -13,7 +13,7 @@ extends 'Moose::Meta::Attribute';
 # register this alias ...
 package Moose::Meta::Attribute::Custom::DoNotSerialize;
 {
-  $Moose::Meta::Attribute::Custom::DoNotSerialize::VERSION = '0.36'; # TRIAL
+  $Moose::Meta::Attribute::Custom::DoNotSerialize::VERSION = '0.37'; # TRIAL
 }
 BEGIN {
   $Moose::Meta::Attribute::Custom::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';

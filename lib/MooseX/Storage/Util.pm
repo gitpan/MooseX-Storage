@@ -1,6 +1,6 @@
 package MooseX::Storage::Util;
 {
-  $MooseX::Storage::Util::VERSION = '0.36'; # TRIAL
+  $MooseX::Storage::Util::VERSION = '0.37'; # TRIAL
 }
 BEGIN {
   $MooseX::Storage::Util::AUTHORITY = 'cpan:STEVAN';
@@ -8,7 +8,6 @@ BEGIN {
 use Moose qw(confess blessed);
 
 use MooseX::Storage::Engine ();
-use utf8 ();
 
 sub peek {
     my ($class, $data, %options) = @_;
