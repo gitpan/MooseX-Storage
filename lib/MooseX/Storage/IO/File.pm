@@ -1,6 +1,6 @@
 package MooseX::Storage::IO::File;
 {
-  $MooseX::Storage::IO::File::VERSION = '0.38'; # TRIAL
+  $MooseX::Storage::IO::File::VERSION = '0.39';
 }
 BEGIN {
   $MooseX::Storage::IO::File::AUTHORITY = 'cpan:STEVAN';

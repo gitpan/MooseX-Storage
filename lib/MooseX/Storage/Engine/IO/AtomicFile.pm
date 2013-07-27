@@ -1,6 +1,6 @@
 package MooseX::Storage::Engine::IO::AtomicFile;
 {
-  $MooseX::Storage::Engine::IO::AtomicFile::VERSION = '0.38'; # TRIAL
+  $MooseX::Storage::Engine::IO::AtomicFile::VERSION = '0.39';
 }
 BEGIN {
   $MooseX::Storage::Engine::IO::AtomicFile::AUTHORITY = 'cpan:STEVAN';

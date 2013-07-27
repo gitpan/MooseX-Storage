@@ -1,8 +1,8 @@
 package MooseX::Storage;
 {
-  $MooseX::Storage::VERSION = '0.38'; # TRIAL
+  $MooseX::Storage::VERSION = '0.39';
 }
-# git description: v0.37-TRIAL-1-g8725bb5
+# git description: v0.38-TRIAL-2-g769dd9c
 
 BEGIN {
   $MooseX::Storage::AUTHORITY = 'cpan:STEVAN';

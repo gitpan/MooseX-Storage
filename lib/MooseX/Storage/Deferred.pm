@@ -1,6 +1,6 @@
 package MooseX::Storage::Deferred;
 {
-  $MooseX::Storage::Deferred::VERSION = '0.38'; # TRIAL
+  $MooseX::Storage::Deferred::VERSION = '0.39';
 }
 BEGIN {
   $MooseX::Storage::Deferred::AUTHORITY = 'cpan:STEVAN';

@@ -149,94 +149,94 @@
    "provides" : {
       "Moose::Meta::Attribute::Custom::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "Moose::Meta::Attribute::Custom::Trait::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage" : {
          "file" : "lib/MooseX/Storage.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Base::WithChecksum" : {
          "file" : "lib/MooseX/Storage/Base/WithChecksum.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Basic" : {
          "file" : "lib/MooseX/Storage/Basic.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Deferred" : {
          "file" : "lib/MooseX/Storage/Deferred.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Engine" : {
          "file" : "lib/MooseX/Storage/Engine.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Engine::IO::AtomicFile" : {
          "file" : "lib/MooseX/Storage/Engine/IO/AtomicFile.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Engine::IO::File" : {
          "file" : "lib/MooseX/Storage/Engine/IO/File.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Engine::Trait::DisableCycleDetection" : {
          "file" : "lib/MooseX/Storage/Engine/Trait/DisableCycleDetection.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Engine::Trait::OnlyWhenBuilt" : {
          "file" : "lib/MooseX/Storage/Engine/Trait/OnlyWhenBuilt.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Format::JSON" : {
          "file" : "lib/MooseX/Storage/Format/JSON.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Format::Storable" : {
          "file" : "lib/MooseX/Storage/Format/Storable.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Format::YAML" : {
          "file" : "lib/MooseX/Storage/Format/YAML.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::IO::AtomicFile" : {
          "file" : "lib/MooseX/Storage/IO/AtomicFile.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::IO::File" : {
          "file" : "lib/MooseX/Storage/IO/File.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::IO::StorableFile" : {
          "file" : "lib/MooseX/Storage/IO/StorableFile.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Meta::Attribute::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Traits::DisableCycleDetection" : {
          "file" : "lib/MooseX/Storage/Traits/DisableCycleDetection.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Traits::OnlyWhenBuilt" : {
          "file" : "lib/MooseX/Storage/Traits/OnlyWhenBuilt.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       },
       "MooseX::Storage::Util" : {
          "file" : "lib/MooseX/Storage/Util.pm",
-         "version" : "0.38"
+         "version" : "0.39"
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "mailto" : "bug-MooseX-Storage@rt.cpan.org",
@@ -248,10 +248,10 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/MooseX-Storage.git;a=summary"
       }
    },
-   "version" : "0.38",
+   "version" : "0.39",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.019001"
+         "version" : "5.019002"
       },
       "plugins" : [
          {
@@ -327,7 +327,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::Compile",
             "name" : "@Author::ETHER/Test::Compile",
-            "version" : "2.009"
+            "version" : "2.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::CheckDeps",
@@ -638,7 +638,7 @@
       "zilla" : {
          "class" : "Dist::Zilla::Dist::Builder",
          "config" : {
-            "is_trial" : "1"
+            "is_trial" : "0"
          },
          "version" : "4.300035"
       }

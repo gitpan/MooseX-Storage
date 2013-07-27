@@ -1,6 +1,6 @@
 package MooseX::Storage::Format::JSON;
 {
-  $MooseX::Storage::Format::JSON::VERSION = '0.38'; # TRIAL
+  $MooseX::Storage::Format::JSON::VERSION = '0.39';
 }
 BEGIN {
   $MooseX::Storage::Format::JSON::AUTHORITY = 'cpan:STEVAN';
