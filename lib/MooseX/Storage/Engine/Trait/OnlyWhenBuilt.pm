@@ -1,9 +1,9 @@
 package MooseX::Storage::Engine::Trait::OnlyWhenBuilt;
-{
-  $MooseX::Storage::Engine::Trait::OnlyWhenBuilt::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::Engine::Trait::OnlyWhenBuilt::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::Engine::Trait::OnlyWhenBuilt::VERSION = '0.40';
 }
 use Moose::Role;
 

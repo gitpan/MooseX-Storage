@@ -1,9 +1,9 @@
 package MooseX::Storage::Format::YAML;
-{
-  $MooseX::Storage::Format::YAML::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::Format::YAML::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::Format::YAML::VERSION = '0.40';
 }
 use Moose::Role;
 

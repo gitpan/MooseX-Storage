@@ -1,9 +1,9 @@
 package MooseX::Storage::IO::StorableFile;
-{
-  $MooseX::Storage::IO::StorableFile::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::IO::StorableFile::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::IO::StorableFile::VERSION = '0.40';
 }
 use Moose::Role;
 

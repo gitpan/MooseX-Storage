@@ -1,9 +1,9 @@
 package MooseX::Storage::Deferred;
-{
-  $MooseX::Storage::Deferred::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::Deferred::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::Deferred::VERSION = '0.40';
 }
 use Moose::Role;
 

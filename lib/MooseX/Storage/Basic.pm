@@ -1,9 +1,9 @@
 package MooseX::Storage::Basic;
-{
-  $MooseX::Storage::Basic::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::Basic::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::Basic::VERSION = '0.40';
 }
 use Moose::Role;
 

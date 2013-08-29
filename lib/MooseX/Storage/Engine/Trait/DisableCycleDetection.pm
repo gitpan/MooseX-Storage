@@ -1,9 +1,9 @@
 package MooseX::Storage::Engine::Trait::DisableCycleDetection;
-{
-  $MooseX::Storage::Engine::Trait::DisableCycleDetection::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::Engine::Trait::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::Engine::Trait::DisableCycleDetection::VERSION = '0.40';
 }
 use Moose::Role;
 

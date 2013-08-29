@@ -1,9 +1,9 @@
 package MooseX::Storage::Base::WithChecksum;
-{
-  $MooseX::Storage::Base::WithChecksum::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::Base::WithChecksum::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::Base::WithChecksum::VERSION = '0.40';
 }
 use Moose::Role;
 

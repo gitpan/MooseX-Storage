@@ -1,12 +1,12 @@
 package MooseX::Storage;
-{
-  $MooseX::Storage::VERSION = '0.39';
-}
-# git description: v0.38-TRIAL-2-g769dd9c
-
 BEGIN {
   $MooseX::Storage::AUTHORITY = 'cpan:STEVAN';
 }
+{
+  $MooseX::Storage::VERSION = '0.40';
+}
+# git description: v0.39-7-g141476e
+
 use Moose qw(confess);
 
 use MooseX::Storage::Meta::Attribute::DoNotSerialize;

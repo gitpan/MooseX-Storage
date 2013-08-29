@@ -1,9 +1,9 @@
 package MooseX::Storage::Format::JSON;
-{
-  $MooseX::Storage::Format::JSON::VERSION = '0.39';
-}
 BEGIN {
   $MooseX::Storage::Format::JSON::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $MooseX::Storage::Format::JSON::VERSION = '0.40';
 }
 use Moose::Role;
 
