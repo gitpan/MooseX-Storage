@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Traits::OnlyWhenBuilt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.40';
+  $MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.41';
 }
 use Moose::Role;
 

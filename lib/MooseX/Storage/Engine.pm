@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Engine::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Engine::VERSION = '0.40';
+  $MooseX::Storage::Engine::VERSION = '0.41';
 }
 use Moose;
 use Scalar::Util qw(refaddr);

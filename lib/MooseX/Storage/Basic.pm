@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Basic::VERSION = '0.40';
+  $MooseX::Storage::Basic::VERSION = '0.41';
 }
 use Moose::Role;
 

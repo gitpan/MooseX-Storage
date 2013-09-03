@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::IO::AtomicFile::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::IO::AtomicFile::VERSION = '0.40';
+  $MooseX::Storage::IO::AtomicFile::VERSION = '0.41';
 }
 use Moose::Role;
 

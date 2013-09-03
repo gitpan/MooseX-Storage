@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Format::YAML::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Format::YAML::VERSION = '0.40';
+  $MooseX::Storage::Format::YAML::VERSION = '0.41';
 }
 use Moose::Role;
 

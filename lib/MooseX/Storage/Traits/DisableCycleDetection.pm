@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Traits::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Traits::DisableCycleDetection::VERSION = '0.40';
+  $MooseX::Storage::Traits::DisableCycleDetection::VERSION = '0.41';
 }
 use Moose::Role;
 

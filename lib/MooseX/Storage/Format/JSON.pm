@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Format::JSON::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Format::JSON::VERSION = '0.40';
+  $MooseX::Storage::Format::JSON::VERSION = '0.41';
 }
 use Moose::Role;
 

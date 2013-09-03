@@ -4,7 +4,7 @@ BEGIN {
   $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.40';
+  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.41';
 }
 use Moose::Role;
 
@@ -14,7 +14,7 @@ BEGIN {
   $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.40';
+  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.41';
 }
 
 sub register_implementation { 'MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize' }

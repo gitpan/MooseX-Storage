@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Util::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Util::VERSION = '0.40';
+  $MooseX::Storage::Util::VERSION = '0.41';
 }
 use Moose qw(confess blessed);
 
