@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Meta::Attribute::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Meta::Attribute::DoNotSerialize::VERSION = '0.41';
+  $MooseX::Storage::Meta::Attribute::DoNotSerialize::VERSION = '0.42';
 }
 use Moose;
 
@@ -16,7 +16,7 @@ BEGIN {
   $Moose::Meta::Attribute::Custom::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $Moose::Meta::Attribute::Custom::DoNotSerialize::VERSION = '0.41';
+  $Moose::Meta::Attribute::Custom::DoNotSerialize::VERSION = '0.42';
 }
 
 sub register_implementation { 'MooseX::Storage::Meta::Attribute::DoNotSerialize' }

@@ -3,9 +3,9 @@ BEGIN {
   $MooseX::Storage::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::VERSION = '0.41';
+  $MooseX::Storage::VERSION = '0.42';
 }
-# git description: v0.40-5-g19d8a77
+# git description: v0.41-3-gd759b12
 
 use Moose qw(confess);
 

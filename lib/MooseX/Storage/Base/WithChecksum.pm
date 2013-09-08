@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Storage::Base::WithChecksum::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Storage::Base::WithChecksum::VERSION = '0.41';
+  $MooseX::Storage::Base::WithChecksum::VERSION = '0.42';
 }
 use Moose::Role;
 

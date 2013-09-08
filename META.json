@@ -6,7 +6,7 @@
       "Yuval Kogman <yuval.kogman@iinteractive.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300037, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -32,7 +32,8 @@
                   "IO::File" : "0.1"
                }
             }
-         }
+         },
+         "x_default" : "1"
       },
       "JSON" : {
          "description" : "Serialize to JSON. You should have at least one serialization format.",
@@ -50,7 +51,8 @@
                   "Test::Deep::JSON" : "0"
                }
             }
-         }
+         },
+         "x_default" : "1"
       },
       "Storable" : {
          "description" : "Serialize to Storable. You should have at least one serialization format.",
@@ -60,7 +62,8 @@
                   "Storable" : "0"
                }
             }
-         }
+         },
+         "x_default" : "1"
       },
       "YAML" : {
          "description" : "Serialize to YAML. You should have at least one serialization format.",
@@ -79,7 +82,8 @@
                   "Test::Without::Module" : "0"
                }
             }
-         }
+         },
+         "x_default" : "1"
       }
    },
    "prereqs" : {
@@ -93,9 +97,9 @@
             "Digest::HMAC" : "0",
             "Digest::HMAC_SHA1" : "0",
             "Digest::SHA" : "0",
-            "Dist::Zilla" : "4.300037",
+            "Dist::Zilla" : "4.300038",
             "Dist::Zilla::Plugin::ModuleBuildTiny" : "0.004",
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.020",
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.021",
             "IO::AtomicFile" : "0.01",
             "IO::File" : "0.1",
             "JSON::Any" : "1.15",
@@ -121,8 +125,11 @@
             "IO::AtomicFile" : "0.01",
             "IO::File" : "0.1",
             "JSON::Any" : "1.15",
+            "MooseX::Storage::Format::JSONpm" : "0.01",
             "Storable" : "0",
-            "YAML::Any" : "0"
+            "YAML" : "0.01",
+            "YAML::Any" : "0",
+            "YAML::Syck" : "0.01"
          },
          "requires" : {
             "Data::Dumper" : "0",
@@ -154,91 +161,91 @@
    "provides" : {
       "Moose::Meta::Attribute::Custom::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "Moose::Meta::Attribute::Custom::Trait::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage" : {
          "file" : "lib/MooseX/Storage.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Base::WithChecksum" : {
          "file" : "lib/MooseX/Storage/Base/WithChecksum.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Basic" : {
          "file" : "lib/MooseX/Storage/Basic.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Deferred" : {
          "file" : "lib/MooseX/Storage/Deferred.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Engine" : {
          "file" : "lib/MooseX/Storage/Engine.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Engine::IO::AtomicFile" : {
          "file" : "lib/MooseX/Storage/Engine/IO/AtomicFile.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Engine::IO::File" : {
          "file" : "lib/MooseX/Storage/Engine/IO/File.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Engine::Trait::DisableCycleDetection" : {
          "file" : "lib/MooseX/Storage/Engine/Trait/DisableCycleDetection.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Engine::Trait::OnlyWhenBuilt" : {
          "file" : "lib/MooseX/Storage/Engine/Trait/OnlyWhenBuilt.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Format::JSON" : {
          "file" : "lib/MooseX/Storage/Format/JSON.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Format::Storable" : {
          "file" : "lib/MooseX/Storage/Format/Storable.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Format::YAML" : {
          "file" : "lib/MooseX/Storage/Format/YAML.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::IO::AtomicFile" : {
          "file" : "lib/MooseX/Storage/IO/AtomicFile.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::IO::File" : {
          "file" : "lib/MooseX/Storage/IO/File.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::IO::StorableFile" : {
          "file" : "lib/MooseX/Storage/IO/StorableFile.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Meta::Attribute::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Traits::DisableCycleDetection" : {
          "file" : "lib/MooseX/Storage/Traits/DisableCycleDetection.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Traits::OnlyWhenBuilt" : {
          "file" : "lib/MooseX/Storage/Traits/OnlyWhenBuilt.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       },
       "MooseX::Storage::Util" : {
          "file" : "lib/MooseX/Storage/Util.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       }
    },
    "release_status" : "stable",
@@ -254,7 +261,7 @@
          "web" : "https://github.com/moose/MooseX-Storage"
       }
    },
-   "version" : "0.41",
+   "version" : "0.42",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019003"
@@ -268,27 +275,27 @@
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
             "name" : "@Author::ETHER/build",
-            "version" : "0.002"
+            "version" : "0.003"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
             "name" : "@Author::ETHER/release",
-            "version" : "0.002"
+            "version" : "0.003"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
             "name" : "@Author::ETHER/ExecDir",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::ShareDir",
             "name" : "@Author::ETHER/ShareDir",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::FileFinder::ByName",
             "name" : "@Author::ETHER/Examples",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::GatherDir",
@@ -298,27 +305,27 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
             "name" : "@Author::ETHER/MetaYAML",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "@Author::ETHER/MetaJSON",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
             "name" : "@Author::ETHER/License",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme",
             "name" : "@Author::ETHER/Readme",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@Author::ETHER/Manifest",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Compile",
@@ -334,7 +341,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::Compile",
-            "version" : "2.024"
+            "version" : "2.027"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::CheckDeps",
@@ -354,7 +361,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaTests",
             "name" : "@Author::ETHER/MetaTests",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Version",
@@ -384,12 +391,12 @@
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
             "name" : "@Author::ETHER/PodSyntaxTests",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodCoverageTests",
             "name" : "@Author::ETHER/PodCoverageTests",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::PodSpelling",
@@ -407,14 +414,19 @@
             "version" : "2.06"
          },
          {
+            "class" : "Dist::Zilla::Plugin::MojibakeTests",
+            "name" : "@Author::ETHER/MojibakeTests",
+            "version" : "0.5"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
             "name" : "@Author::ETHER/PruneCruft",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
             "name" : "@Author::ETHER/ManifestSkip",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Describe",
@@ -424,17 +436,17 @@
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
             "name" : "@Author::ETHER/PkgVersion",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",
             "name" : "@Author::ETHER/NextRelease",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::GithubMeta",
             "name" : "@Author::ETHER/GithubMeta",
-            "version" : "0.34"
+            "version" : "0.36"
          },
          {
             "class" : "Dist::Zilla::Plugin::AutoMetaResources",
@@ -449,7 +461,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaNoIndex",
             "name" : "@Author::ETHER/MetaNoIndex",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
@@ -459,7 +471,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@Author::ETHER/MetaConfig",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::MinimumPerl",
@@ -475,7 +487,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::CheckDeps, indirect",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -486,7 +498,7 @@
                }
             },
             "name" : "@Author::ETHER/installer_requirements",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
@@ -546,12 +558,12 @@
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
             "name" : "@Author::ETHER/TestRelease",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@Author::ETHER/UploadToCPAN",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
@@ -581,7 +593,7 @@
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
             "name" : "@Author::ETHER/ConfirmRelease",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::ContributorsFromGit",
@@ -597,7 +609,7 @@
                }
             },
             "name" : "RuntimeRequires",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -608,7 +620,7 @@
                }
             },
             "name" : "TestRequires",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -619,7 +631,7 @@
                }
             },
             "name" : "RuntimeRecommends",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -630,77 +642,77 @@
                }
             },
             "name" : "DevelopRequires",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "JSON-Runtime",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "JSON-RuntimeRecommends",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "JSON-Test",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "YAML-Runtime",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "YAML-RuntimeRecommends",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "YAML-Test",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "Storable",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::OptionalFeature",
             "name" : "File",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":InstallModules",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":IncModules",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":TestFiles",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ExecFiles",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ShareFiles",
-            "version" : "4.300037"
+            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":MainModule",
-            "version" : "4.300037"
+            "version" : "4.300038"
          }
       ],
       "zilla" : {
@@ -708,7 +720,7 @@
          "config" : {
             "is_trial" : "0"
          },
-         "version" : "4.300037"
+         "version" : "4.300038"
       }
    },
    "x_authority" : "cpan:STEVAN",
