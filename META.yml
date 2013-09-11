@@ -15,9 +15,9 @@ build_requires:
   Test::More: 0.94
   Test::Requires: 0.05
 configure_requires:
-  Module::Build::Tiny: 0.026
+  Module::Build::Tiny: 0.027
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132140'
+generated_by: 'Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -54,70 +54,70 @@ optional_features:
 provides:
   Moose::Meta::Attribute::Custom::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: 0.42
+    version: 0.43
   Moose::Meta::Attribute::Custom::Trait::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage:
     file: lib/MooseX/Storage.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Base::WithChecksum:
     file: lib/MooseX/Storage/Base/WithChecksum.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Basic:
     file: lib/MooseX/Storage/Basic.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Deferred:
     file: lib/MooseX/Storage/Deferred.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Engine:
     file: lib/MooseX/Storage/Engine.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Engine::IO::AtomicFile:
     file: lib/MooseX/Storage/Engine/IO/AtomicFile.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Engine::IO::File:
     file: lib/MooseX/Storage/Engine/IO/File.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Engine::Trait::DisableCycleDetection:
     file: lib/MooseX/Storage/Engine/Trait/DisableCycleDetection.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Engine::Trait::OnlyWhenBuilt:
     file: lib/MooseX/Storage/Engine/Trait/OnlyWhenBuilt.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Format::JSON:
     file: lib/MooseX/Storage/Format/JSON.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Format::Storable:
     file: lib/MooseX/Storage/Format/Storable.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Format::YAML:
     file: lib/MooseX/Storage/Format/YAML.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::IO::AtomicFile:
     file: lib/MooseX/Storage/IO/AtomicFile.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::IO::File:
     file: lib/MooseX/Storage/IO/File.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::IO::StorableFile:
     file: lib/MooseX/Storage/IO/StorableFile.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Meta::Attribute::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Traits::DisableCycleDetection:
     file: lib/MooseX/Storage/Traits/DisableCycleDetection.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Traits::OnlyWhenBuilt:
     file: lib/MooseX/Storage/Traits/OnlyWhenBuilt.pm
-    version: 0.42
+    version: 0.43
   MooseX::Storage::Util:
     file: lib/MooseX/Storage/Util.pm
-    version: 0.42
+    version: 0.43
 recommends:
   Digest::HMAC: 0
   Digest::SHA: 0
@@ -132,6 +132,7 @@ recommends:
 requires:
   Data::Dumper: 0
   Digest: 0
+  Module::Runtime: 0
   Moose: 0.99
   Scalar::Util: 0
   String::RewritePrefix: 0
@@ -140,7 +141,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Storage
   homepage: https://github.com/moose/MooseX-Storage
   repository: https://github.com/moose/MooseX-Storage.git
-version: 0.42
+version: 0.43
 x_Dist_Zilla:
   perl:
     version: 5.019003
@@ -152,11 +153,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       name: '@Author::ETHER/build'
-      version: 0.003
+      version: 0.004
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       name: '@Author::ETHER/release'
-      version: 0.003
+      version: 0.004
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: '@Author::ETHER/ExecDir'
@@ -203,7 +204,7 @@ x_Dist_Zilla:
             - ':ExecFiles'
             - '@Author::ETHER/Examples'
       name: '@Author::ETHER/Test::Compile'
-      version: 2.027
+      version: 2.029
     -
       class: Dist::Zilla::Plugin::Test::CheckDeps
       name: '@Author::ETHER/Test::CheckDeps'
@@ -251,7 +252,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::PodSpelling
       name: '@Author::ETHER/Test::PodSpelling'
-      version: 2.006000
+      version: 2.006001
     -
       class: Dist::Zilla::Plugin::Test::Pod::No404s
       name: '@Author::ETHER/Test::Pod::No404s'
@@ -287,7 +288,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GithubMeta
       name: '@Author::ETHER/GithubMeta'
-      version: 0.36
+      version: 0.38
     -
       class: Dist::Zilla::Plugin::AutoMetaResources
       name: '@Author::ETHER/AutoMetaResources'
@@ -335,7 +336,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ModuleBuildTiny
       name: '@Author::ETHER/ModuleBuildTiny'
-      version: 0.004
+      version: 0.005
     -
       class: Dist::Zilla::Plugin::InstallGuide
       name: '@Author::ETHER/InstallGuide'
