@@ -1,10 +1,12 @@
 package MooseX::Storage::Util;
+{
+  $MooseX::Storage::Util::VERSION = '0.44';
+}
 BEGIN {
   $MooseX::Storage::Util::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Storage::Util::VERSION = '0.43';
-}
+# ABSTRACT: A MooseX::Storage Swiss Army chainsaw
+
 use Moose qw(confess blessed);
 
 use MooseX::Storage::Engine ();
@@ -68,9 +70,18 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
+Interactive, Inc. TODO
+
 =head1 NAME
 
 MooseX::Storage::Util - A MooseX::Storage Swiss Army chainsaw
+
+=head1 VERSION
+
+version 0.44
 
 =head1 DESCRIPTION
 
@@ -123,8 +134,6 @@ found in the key for you.
 
 =back
 
-=for stopwords TODO
-
 =head1 TODO
 
 Add more stuff to this module :)
@@ -135,17 +144,29 @@ All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+=over 4
+
+=item *
+
+Chris Prather <chris.prather@iinteractive.com>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc..
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

@@ -1,10 +1,11 @@
 package MooseX::Storage::Deferred;
+{
+  $MooseX::Storage::Deferred::VERSION = '0.44';
+}
 BEGIN {
   $MooseX::Storage::Deferred::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Storage::Deferred::VERSION = '0.43';
-}
+# ABSTRACT: A role for undecisive programmers
 use Moose::Role;
 
 with 'MooseX::Storage::Basic';
@@ -68,11 +69,21 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
+Interactive, Inc. Plunien Jonathan Rockway Yu Jos Boumans Karen Etheridge
+Ricardo SIGNES Signes Robert Boone Shawn M Moore Tomas Doran (t0m) Yuval
+Cory Kogman t0m Watson Dagfinn Ilmari Mannsåker Florian Ragwitz Johannes
+undecisive JSONpm
+
 =head1 NAME
 
-=for stopwords undecisive
-
 MooseX::Storage::Deferred - A role for undecisive programmers
+
+=head1 VERSION
+
+version 0.44
 
 =head1 SYNOPSIS
 
@@ -119,8 +130,6 @@ SYNOPSIS for more info)
 =over 4
 
 =item I<JSON>
-
-=for stopwords JSONpm
 
 =item I<JSONpm>
 
@@ -175,17 +184,29 @@ All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+=over 4
+
+=item *
+
+Chris Prather <chris.prather@iinteractive.com>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc..
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

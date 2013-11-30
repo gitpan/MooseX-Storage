@@ -1,10 +1,11 @@
 package MooseX::Storage::Traits::DisableCycleDetection;
+{
+  $MooseX::Storage::Traits::DisableCycleDetection::VERSION = '0.44';
+}
 BEGIN {
   $MooseX::Storage::Traits::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Storage::Traits::DisableCycleDetection::VERSION = '0.43';
-}
+# ABSTRACT: A custom trait to bypass cycle detection
 use Moose::Role;
 
 requires 'pack';
@@ -32,12 +33,20 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
+Interactive, Inc. culted
+
 =head1 NAME
 
 MooseX::Storage::Traits::DisableCycleDetection - A custom trait to bypass cycle detection
 
-=head1 SYNOPSIS
+=head1 VERSION
 
+version 0.44
+
+=head1 SYNOPSIS
 
     package Double;
     use Moose;
@@ -63,8 +72,6 @@ references, so if you know what you are doing, you can bypass this check.
 This trait is applied to all objects that inherit from it. To use this
 on a per-case basis, see C<disable_cycle_check> in L<MooseX::Storage::Basic>.
 
-=for stopwords culted
-
 See the SYNOPSIS for a nice example that can be easily cargo-culted.
 
 =head1 METHODS
@@ -83,18 +90,29 @@ All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+=over 4
+
+=item *
+
+Chris Prather <chris.prather@iinteractive.com>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc..
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
-

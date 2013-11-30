@@ -1,11 +1,14 @@
 Build.PL
+CONTRIBUTING
 Changes
 INSTALL
 LICENSE
 MANIFEST
 META.json
 META.yml
+Makefile.PL
 README
+README.md
 TODO
 dist.ini
 lib/MooseX/Storage.pm
@@ -28,8 +31,7 @@ lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
 lib/MooseX/Storage/Traits/DisableCycleDetection.pm
 lib/MooseX/Storage/Traits/OnlyWhenBuilt.pm
 lib/MooseX/Storage/Util.pm
-t/00-check-deps.t
-t/00-compile.t
+t/00-report-prereqs.t
 t/000_load.t
 t/001_basic.t
 t/002_basic_io.t
@@ -61,6 +63,8 @@ t/104_io_w_utf8.t
 t/105_io_atomic_w_utf8.t
 t/200_combined_in_roles.t
 t/300_overloaded.t
+weaver.ini
+xt/author/00-compile.t
 xt/author/pod-spell.t
 xt/release/changes_has_content.t
 xt/release/cpan-changes.t
@@ -73,5 +77,6 @@ xt/release/no-tabs.t
 xt/release/pod-coverage.t
 xt/release/pod-no404s.t
 xt/release/pod-syntax.t
+xt/release/portability.t
 xt/release/test-version.t
 xt/release/unused-vars.t

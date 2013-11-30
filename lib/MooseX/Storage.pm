@@ -1,12 +1,13 @@
 package MooseX::Storage;
+{
+  $MooseX::Storage::VERSION = '0.44';
+}
+# git description: v0.43-9-g1f26f0b
+
 BEGIN {
   $MooseX::Storage::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Storage::VERSION = '0.43';
-}
-# git description: v0.42-1-g352d533
-
+# ABSTRACT: A serialization framework for Moose classes
 use Moose qw(confess);
 
 use MooseX::Storage::Meta::Attribute::DoNotSerialize;
@@ -114,9 +115,21 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
+Interactive, Inc. Plunien Jonathan Rockway Yu Jos Boumans Karen Etheridge
+Ricardo SIGNES Signes Robert Boone Shawn M Moore Tomas Doran (t0m) Yuval
+Cory Kogman t0m Watson Dagfinn Ilmari Mannsåker Florian Ragwitz Johannes io
+subtypes parameterized TODO
+
 =head1 NAME
 
 MooseX::Storage - A serialization framework for Moose classes
+
+=head1 VERSION
+
+version 0.44
 
 =head1 SYNOPSIS
 
@@ -203,8 +216,6 @@ specific serialization format and Perl land.
 This level is optional, if you don't want/need it, you don't have to
 have it. You can just use C<pack>/C<unpack> instead.
 
-=for stopwords io
-
 =item B<io>
 
 The third (io) level is C<load> and C<store>. In this level we are reading
@@ -251,8 +262,6 @@ With Array and Hash references the first level down is inspected and
 any objects found are serialized/deserialized for you. We do not do
 this recursively by default, however this feature may become an
 option eventually.
-
-=for stopwords subtypes
 
 The specific serialize/deserialize routine is determined by the
 Moose type constraint a specific attribute has. In most cases subtypes
@@ -303,8 +312,6 @@ that is not under the default namespace prefix, start with an equal sign:
 
   Storage(format => '=My::Private::JSONFormat');
 
-=for stopwords parameterized
-
 To use a parameterized role (for which, see L<MooseX::Role::Parameterized>) you
 can pass an arrayref of the role name (in short or long form, as above) and its
 parameters:
@@ -329,8 +336,6 @@ parameters:
 
 =back
 
-=for stopwords TODO
-
 =head1 TODO
 
 This module needs docs and probably a Cookbook of some kind as well.
@@ -346,23 +351,103 @@ All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Chris Prather E<lt>chris.prather@iinteractive.comE<gt>
+=over 4
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+=item *
 
-Yuval Kogman E<lt>yuval.kogman@iinteractive.comE<gt>
+Chris Prather <chris.prather@iinteractive.com>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc..
 
-L<http://www.iinteractive.com>
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Chris Prather <chris@prather.org>
+
+=item *
+
+Cory Watson <gphat@Crankwizzah.local>
+
+=item *
+
+Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Johannes Plunien <plu@pqpq.de>
+
+=item *
+
+Jonathan Rockway <jon@jrock.us>
+
+=item *
+
+Jonathan Yu <frequency@cpan.org>
+
+=item *
+
+Jos Boumans <jos@dwim.org>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Ricardo SIGNES <rjbs@cpan.org>
+
+=item *
+
+Ricardo Signes <rjbs@cpan.org>
+
+=item *
+
+Robert Boone <robo4288@gmail.com>
+
+=item *
+
+Shawn M Moore <sartak@gmail.com>
+
+=item *
+
+Tomas Doran (t0m) <t0m@state51.co.uk>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=item *
+
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+t0m <bobtfish@bobtfish.net>
+
+=back
 
 =cut
-
-

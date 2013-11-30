@@ -1,20 +1,21 @@
-
 package MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize;
+{
+  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.44';
+}
 BEGIN {
   $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.43';
-}
+# ABSTRACT: A custom meta-attribute-trait to bypass serialization
+
 use Moose::Role;
 
 # register this alias ...
 package Moose::Meta::Attribute::Custom::Trait::DoNotSerialize;
+{
+  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.44';
+}
 BEGIN {
   $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
-}
-{
-  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.43';
 }
 
 sub register_implementation { 'MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize' }
@@ -25,9 +26,18 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
+Interactive, Inc. culted
+
 =head1 NAME
 
 MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize - A custom meta-attribute-trait to bypass serialization
+
+=head1 VERSION
+
+version 0.44
 
 =head1 SYNOPSIS
 
@@ -50,8 +60,6 @@ MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize - A custom meta-attribut
 
 =head1 DESCRIPTION
 
-=for stopwords culted
-
 Sometimes you don't want a particular attribute to be part of the
 serialization, in this case, you want to make sure that attribute
 uses this custom meta-attribute-trait. See the SYNOPSIS for a nice
@@ -73,17 +81,29 @@ All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+=over 4
+
+=item *
+
+Chris Prather <chris.prather@iinteractive.com>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc..
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

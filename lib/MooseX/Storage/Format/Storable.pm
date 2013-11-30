@@ -1,10 +1,11 @@
 package MooseX::Storage::Format::Storable;
+{
+  $MooseX::Storage::Format::Storable::VERSION = '0.44';
+}
 BEGIN {
   $MooseX::Storage::Format::Storable::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Storage::Format::Storable::VERSION = '0.43';
-}
+# ABSTRACT: A Storable serialization role
 use Moose::Role;
 
 use Storable ();
@@ -30,9 +31,21 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
+Interactive, Inc. Plunien Jonathan Rockway Yu Jos Boumans Karen Etheridge
+Ricardo SIGNES Signes Robert Boone Shawn M Moore Tomas Doran (t0m) Yuval
+Cory Kogman t0m Watson Dagfinn Ilmari Mannsåker Florian Ragwitz Johannes
+IPC Storable's
+
 =head1 NAME
 
 MooseX::Storage::Format::Storable - A Storable serialization role
+
+=head1 VERSION
+
+version 0.44
 
 =head1 SYNOPSIS
 
@@ -60,13 +73,9 @@ MooseX::Storage::Format::Storable - A Storable serialization role
 
 =head1 DESCRIPTION
 
-=for stopwords IPC
-
 This module will C<thaw> and C<freeze> Moose classes using Storable. It
 uses C<Storable::nfreeze> by default so that it can be easily used
 in IPC scenarios across machines or just locally.
-
-=for stopwords Storable's
 
 One important thing to note is that this module does not mix well
 with the IO modules. The structures that C<freeze> and C<thaw> deal with
@@ -99,19 +108,29 @@ All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+=over 4
+
+=item *
+
+Chris Prather <chris.prather@iinteractive.com>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc..
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-

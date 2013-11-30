@@ -1,10 +1,12 @@
 package MooseX::Storage::Engine::Trait::DisableCycleDetection;
+{
+  $MooseX::Storage::Engine::Trait::DisableCycleDetection::VERSION = '0.44';
+}
 BEGIN {
   $MooseX::Storage::Engine::Trait::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Storage::Engine::Trait::DisableCycleDetection::VERSION = '0.43';
-}
+# ABSTRACT: A custom trait to bypass cycle detection
+
 use Moose::Role;
 
 around 'check_for_cycle_in_collapse' => sub {
@@ -15,9 +17,24 @@ around 'check_for_cycle_in_collapse' => sub {
 
 1;
 
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
+Interactive, Inc. Plunien Jonathan Rockway Yu Jos Boumans Karen Etheridge
+Ricardo SIGNES Signes Robert Boone Shawn M Moore Tomas Doran (t0m) Yuval
+Cory Kogman t0m Watson Dagfinn Ilmari Mannsåker Florian Ragwitz Johannes
+
 =head1 NAME
 
 MooseX::Storage::Engine::Trait::DisableCycleDetection - A custom trait to bypass cycle detection
+
+=head1 VERSION
+
+version 0.44
 
 =head1 SYNOPSIS
 
@@ -61,18 +78,29 @@ All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+=over 4
+
+=item *
+
+Chris Prather <chris.prather@iinteractive.com>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc..
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
-
