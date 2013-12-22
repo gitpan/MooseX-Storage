@@ -1,6 +1,6 @@
 package MooseX::Storage::Traits::OnlyWhenBuilt;
 {
-  $MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.44';
+  $MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.45';
 }
 BEGIN {
   $MooseX::Storage::Traits::OnlyWhenBuilt::AUTHORITY = 'cpan:STEVAN';
@@ -36,7 +36,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. culted
+Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
+Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
+Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
+Steinbrunner culted
 
 =head1 NAME
 
@@ -44,7 +47,7 @@ MooseX::Storage::Traits::OnlyWhenBuilt - A custom trait to bypass serialization
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

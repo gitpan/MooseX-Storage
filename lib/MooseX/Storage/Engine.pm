@@ -1,6 +1,6 @@
 package MooseX::Storage::Engine;
 {
-  $MooseX::Storage::Engine::VERSION = '0.44';
+  $MooseX::Storage::Engine::VERSION = '0.45';
 }
 BEGIN {
   $MooseX::Storage::Engine::AUTHORITY = 'cpan:STEVAN';
@@ -221,6 +221,7 @@ my %TYPES = (
     'Num'      => { expand => sub { $_[0] + 0 }, collapse => sub { $_[0] + 0 } },
     # These are boring ones, so they use the identity function ...
     'Str'      => { expand => sub { shift }, collapse => sub { shift } },
+    'Value'    => { expand => sub { shift }, collapse => sub { shift } },
     'Bool'     => { expand => sub { shift }, collapse => sub { shift } },
     # These are the trickier ones, (see notes)
     # NOTE:
@@ -246,7 +247,7 @@ my %TYPES = (
         collapse => sub {
             my ( $array, @args ) = @_;
             # NOTE:
-            # we need to make a copy cause
+            # we need to make a copy because
             # otherwise it will affect the
             # other real version.
             [ map {
@@ -269,7 +270,7 @@ my %TYPES = (
         collapse => sub {
             my ( $hash, @args ) = @_;
             # NOTE:
-            # we need to make a copy cause
+            # we need to make a copy because
             # otherwise it will affect the
             # other real version.
             +{ map {
@@ -333,8 +334,11 @@ sub find_type_handler {
     # most cases. It is probably not
     # 100% ideal though, but until I
     # come up with a decent test case
-    # it will do for now.
-    foreach my $type (keys %TYPES) {
+    # it will do for now.  We need to
+    # check more-specific types first.
+    my %seen;
+    my @fallback = grep { !$seen{$_}++ } qw/Int Num Str Value/, keys %TYPES;
+    foreach my $type ( @fallback ) {
         return $TYPES{$type}
             if $type_constraint->is_subtype_of($type);
     }
@@ -374,9 +378,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Plunien Jonathan Rockway Yu Jos Boumans Karen Etheridge
-Ricardo SIGNES Signes Robert Boone Shawn M Moore Tomas Doran (t0m) Yuval
-Cory Kogman t0m Watson Dagfinn Ilmari Mannsåker Florian Ragwitz Johannes
+Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
+Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
+Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
+Steinbrunner
 
 =head1 NAME
 
@@ -384,7 +389,7 @@ MooseX::Storage::Engine - The meta-engine to handle collapsing and expanding obj
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 DESCRIPTION
 

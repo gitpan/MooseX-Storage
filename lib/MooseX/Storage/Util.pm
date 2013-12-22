@@ -1,6 +1,6 @@
 package MooseX::Storage::Util;
 {
-  $MooseX::Storage::Util::VERSION = '0.44';
+  $MooseX::Storage::Util::VERSION = '0.45';
 }
 BEGIN {
   $MooseX::Storage::Util::AUTHORITY = 'cpan:STEVAN';
@@ -73,7 +73,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. TODO
+Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
+Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
+Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
+Steinbrunner TODO
 
 =head1 NAME
 
@@ -81,7 +84,7 @@ MooseX::Storage::Util - A MooseX::Storage Swiss Army chainsaw
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 DESCRIPTION
 

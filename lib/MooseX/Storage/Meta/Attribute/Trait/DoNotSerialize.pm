@@ -1,6 +1,6 @@
 package MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize;
 {
-  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.44';
+  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.45';
 }
 BEGIN {
   $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
@@ -12,7 +12,7 @@ use Moose::Role;
 # register this alias ...
 package Moose::Meta::Attribute::Custom::Trait::DoNotSerialize;
 {
-  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.44';
+  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.45';
 }
 BEGIN {
   $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
@@ -29,7 +29,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. culted
+Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
+Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
+Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
+Steinbrunner culted
 
 =head1 NAME
 
@@ -37,7 +40,7 @@ MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize - A custom meta-attribut
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

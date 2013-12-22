@@ -1,6 +1,6 @@
 package MooseX::Storage::Engine::IO::AtomicFile;
 {
-  $MooseX::Storage::Engine::IO::AtomicFile::VERSION = '0.44';
+  $MooseX::Storage::Engine::IO::AtomicFile::VERSION = '0.45';
 }
 BEGIN {
   $MooseX::Storage::Engine::IO::AtomicFile::AUTHORITY = 'cpan:STEVAN';
@@ -39,7 +39,7 @@ MooseX::Storage::Engine::IO::AtomicFile - The actually atomic file storage mecha
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 DESCRIPTION
 

@@ -1,8 +1,8 @@
 package MooseX::Storage;
 {
-  $MooseX::Storage::VERSION = '0.44';
+  $MooseX::Storage::VERSION = '0.45';
 }
-# git description: v0.43-9-g1f26f0b
+# git description: v0.44-10-g01cb843
 
 BEGIN {
   $MooseX::Storage::AUTHORITY = 'cpan:STEVAN';
@@ -82,7 +82,7 @@ sub _injected_storage_role_generator {
 
     # NOTE:
     # you don't have to have a format
-    # role, this just means you dont
+    # role, this just means you don't
     # get anything other than pack/unpack
     push @roles, __PACKAGE__->_expand_role(Format => $params{format});
 
@@ -92,7 +92,7 @@ sub _injected_storage_role_generator {
     # too, the exception being StorableFile
     #
     # NOTE:
-    # we dont need this code anymore, cause
+    # we don't need this code anymore, because
     # the role composition will catch it for
     # us. This allows the StorableFile to work
     #(exists $params{'format'})
@@ -118,10 +118,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Plunien Jonathan Rockway Yu Jos Boumans Karen Etheridge
-Ricardo SIGNES Signes Robert Boone Shawn M Moore Tomas Doran (t0m) Yuval
-Cory Kogman t0m Watson Dagfinn Ilmari Mannsåker Florian Ragwitz Johannes io
-subtypes parameterized TODO
+Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
+Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
+Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
+Steinbrunner io subtypes parameterized TODO
 
 =head1 NAME
 
@@ -129,7 +129,7 @@ MooseX::Storage - A serialization framework for Moose classes
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 
@@ -394,6 +394,14 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 
 =item *
 
+David Golden <dagolden@cpan.org>
+
+=item *
+
+David Steinbrunner <dsteinbrunner@pobox.com>
+
+=item *
+
 Florian Ragwitz <rafl@debian.org>
 
 =item *
@@ -418,10 +426,6 @@ Karen Etheridge <ether@cpan.org>
 
 =item *
 
-Ricardo SIGNES <rjbs@cpan.org>
-
-=item *
-
 Ricardo Signes <rjbs@cpan.org>
 
 =item *
@@ -434,19 +438,11 @@ Shawn M Moore <sartak@gmail.com>
 
 =item *
 
-Tomas Doran (t0m) <t0m@state51.co.uk>
-
-=item *
-
 Tomas Doran <bobtfish@bobtfish.net>
 
 =item *
 
 Yuval Kogman <nothingmuch@woobling.org>
-
-=item *
-
-t0m <bobtfish@bobtfish.net>
 
 =back
 

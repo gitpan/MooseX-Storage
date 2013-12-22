@@ -6,7 +6,7 @@
       "\u05d9\u05d5\u05d1\u05dc \u05e7\u05d5\u05d2'\u05de\u05df (Yuval Kogman) <nothingmuch@woobling.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.133380",
    "license" : [
       "perl_5"
    ],
@@ -96,7 +96,7 @@
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.041"
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.043"
          },
          "requires" : {
             "Digest" : "0",
@@ -122,6 +122,8 @@
             "JSON::Any" : "1.15",
             "MooseX::Storage::Format::JSONpm" : "0",
             "Pod::Coverage::TrustPod" : "0",
+            "Pod::Weaver" : "4",
+            "Pod::Weaver::Section::Contributors" : "0",
             "Storable" : "0",
             "Test::CPAN::Changes" : "0.19",
             "Test::CPAN::Meta" : "0",
@@ -181,91 +183,91 @@
    "provides" : {
       "Moose::Meta::Attribute::Custom::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "Moose::Meta::Attribute::Custom::Trait::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage" : {
          "file" : "lib/MooseX/Storage.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Base::WithChecksum" : {
          "file" : "lib/MooseX/Storage/Base/WithChecksum.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Basic" : {
          "file" : "lib/MooseX/Storage/Basic.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Deferred" : {
          "file" : "lib/MooseX/Storage/Deferred.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Engine" : {
          "file" : "lib/MooseX/Storage/Engine.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Engine::IO::AtomicFile" : {
          "file" : "lib/MooseX/Storage/Engine/IO/AtomicFile.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Engine::IO::File" : {
          "file" : "lib/MooseX/Storage/Engine/IO/File.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Engine::Trait::DisableCycleDetection" : {
          "file" : "lib/MooseX/Storage/Engine/Trait/DisableCycleDetection.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Engine::Trait::OnlyWhenBuilt" : {
          "file" : "lib/MooseX/Storage/Engine/Trait/OnlyWhenBuilt.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Format::JSON" : {
          "file" : "lib/MooseX/Storage/Format/JSON.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Format::Storable" : {
          "file" : "lib/MooseX/Storage/Format/Storable.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Format::YAML" : {
          "file" : "lib/MooseX/Storage/Format/YAML.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::IO::AtomicFile" : {
          "file" : "lib/MooseX/Storage/IO/AtomicFile.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::IO::File" : {
          "file" : "lib/MooseX/Storage/IO/File.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::IO::StorableFile" : {
          "file" : "lib/MooseX/Storage/IO/StorableFile.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Meta::Attribute::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize" : {
          "file" : "lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Traits::DisableCycleDetection" : {
          "file" : "lib/MooseX/Storage/Traits/DisableCycleDetection.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Traits::OnlyWhenBuilt" : {
          "file" : "lib/MooseX/Storage/Traits/OnlyWhenBuilt.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       },
       "MooseX::Storage::Util" : {
          "file" : "lib/MooseX/Storage/Util.pm",
-         "version" : "0.44"
+         "version" : "0.45"
       }
    },
    "release_status" : "stable",
@@ -283,7 +285,7 @@
       "x_IRC" : "irc://irc.perl.org/#moose",
       "x_MailingList" : "http://lists.perl.org/list/moose.html"
    },
-   "version" : "0.44",
+   "version" : "0.45",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019006"
@@ -292,7 +294,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
             "name" : "@Author::ETHER/Git::NextVersion",
-            "version" : "2.017"
+            "version" : "2.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
@@ -308,7 +310,7 @@
                }
             },
             "name" : "@Author::ETHER/build",
-            "version" : "0.014"
+            "version" : "0.015"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
@@ -318,19 +320,11 @@
                   "check_all_prereqs" : "1",
                   "modules" : [],
                   "phase" : "release",
-                  "skip" : [
-                     "Dist::Zilla::Plugin::Git::Check",
-                     "Dist::Zilla::Plugin::Git::Commit",
-                     "Dist::Zilla::Plugin::Git::GatherDir",
-                     "Dist::Zilla::Plugin::Git::NextVersion",
-                     "Dist::Zilla::Plugin::Git::Push",
-                     "Dist::Zilla::Plugin::Git::Tag",
-                     "Dist::Zilla::Plugin::Git::Init"
-                  ]
+                  "skip" : []
                }
             },
             "name" : "@Author::ETHER/release",
-            "version" : "0.014"
+            "version" : "0.015"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
@@ -350,7 +344,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::GatherDir",
             "name" : "@Author::ETHER/Git::GatherDir",
-            "version" : "2.017"
+            "version" : "2.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
@@ -388,7 +382,7 @@
                }
             },
             "name" : "@Author::ETHER/GenerateFile::ShareDir",
-            "version" : "0.002"
+            "version" : "0.003"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Compile",
@@ -405,7 +399,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::Compile",
-            "version" : "2.038"
+            "version" : "2.039"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::NoTabs",
@@ -421,7 +415,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::NoTabs",
-            "version" : "0.05"
+            "version" : "0.06"
          },
          {
             "class" : "Dist::Zilla::Plugin::EOLTests",
@@ -471,7 +465,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::PodSpelling",
             "name" : "@Author::ETHER/Test::PodSpelling",
-            "version" : "2.006001"
+            "version" : "2.006002"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Pod::No404s",
@@ -535,87 +529,87 @@
                      {
                         "class" : "Pod::Weaver::Plugin::EnsurePod5",
                         "name" : "@CorePrep/EnsurePod5",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Plugin::H1Nester",
                         "name" : "@CorePrep/H1Nester",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Plugin::SingleEncoding",
                         "name" : "@Default/SingleEncoding",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Name",
                         "name" : "@Default/Name",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Version",
                         "name" : "@Default/Version",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Region",
                         "name" : "@Default/prelude",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Generic",
                         "name" : "SYNOPSIS",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Generic",
                         "name" : "DESCRIPTION",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Generic",
                         "name" : "OVERVIEW",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
                         "name" : "ATTRIBUTES",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
                         "name" : "METHODS",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
                         "name" : "FUNCTIONS",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Leftovers",
                         "name" : "@Default/Leftovers",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Region",
                         "name" : "@Default/postlude",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Authors",
                         "name" : "@Default/Authors",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Legal",
                         "name" : "@Default/Legal",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Plugin::Transformer",
                         "name" : "-Transformer",
-                        "version" : "4.004"
+                        "version" : "4.005"
                      },
                      {
                         "class" : "Pod::Weaver::Plugin::StopWords",
@@ -625,7 +619,7 @@
                      {
                         "class" : "Pod::Weaver::Section::Contributors",
                         "name" : "Contributors",
-                        "version" : "0.006"
+                        "version" : "0.007"
                      }
                   ]
                }
@@ -641,7 +635,7 @@
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
             "name" : "@Author::ETHER/ReadmeAnyFromPod",
-            "version" : "0.133290"
+            "version" : "0.133360"
          },
          {
             "class" : "Dist::Zilla::Plugin::GithubMeta",
@@ -721,7 +715,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker::Fallback",
             "name" : "@Author::ETHER/MakeMaker::Fallback",
-            "version" : "0.004"
+            "version" : "0.005"
          },
          {
             "class" : "Dist::Zilla::Plugin::ModuleBuildTiny",
@@ -736,7 +730,7 @@
          {
             "class" : "Dist::Zilla::Plugin::CheckSelfDependency",
             "name" : "@Author::ETHER/CheckSelfDependency",
-            "version" : "0.005"
+            "version" : "0.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::Run::AfterBuild",
@@ -746,7 +740,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
             "name" : "@Author::ETHER/initial check",
-            "version" : "2.017"
+            "version" : "2.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts",
@@ -776,7 +770,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
             "name" : "@Author::ETHER/after tests",
-            "version" : "2.017"
+            "version" : "2.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
@@ -791,22 +785,22 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
             "name" : "@Author::ETHER/Git::Commit",
-            "version" : "2.017"
+            "version" : "2.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@Author::ETHER/Git::Tag",
-            "version" : "2.017"
+            "version" : "2.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Update",
             "name" : "@Author::ETHER/GitHub::Update",
-            "version" : "0.35"
+            "version" : "0.36"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Push",
             "name" : "@Author::ETHER/Git::Push",
-            "version" : "2.017"
+            "version" : "2.019"
          },
          {
             "class" : "Dist::Zilla::Plugin::InstallRelease",
@@ -967,20 +961,19 @@
       "Chris Prather <chris@prather.org>",
       "Cory Watson <gphat@Crankwizzah.local>",
       "Dagfinn Ilmari Manns\u00e5ker <ilmari@ilmari.org>",
+      "David Golden <dagolden@cpan.org>",
+      "David Steinbrunner <dsteinbrunner@pobox.com>",
       "Florian Ragwitz <rafl@debian.org>",
       "Johannes Plunien <plu@pqpq.de>",
       "Jonathan Rockway <jon@jrock.us>",
       "Jonathan Yu <frequency@cpan.org>",
       "Jos Boumans <jos@dwim.org>",
       "Karen Etheridge <ether@cpan.org>",
-      "Ricardo SIGNES <rjbs@cpan.org>",
       "Ricardo Signes <rjbs@cpan.org>",
       "Robert Boone <robo4288@gmail.com>",
       "Shawn M Moore <sartak@gmail.com>",
-      "Tomas Doran (t0m) <t0m@state51.co.uk>",
       "Tomas Doran <bobtfish@bobtfish.net>",
-      "Yuval Kogman <nothingmuch@woobling.org>",
-      "t0m <bobtfish@bobtfish.net>"
+      "Yuval Kogman <nothingmuch@woobling.org>"
    ]
 }
 
