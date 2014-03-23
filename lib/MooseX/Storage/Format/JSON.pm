@@ -1,16 +1,12 @@
 package MooseX::Storage::Format::JSON;
-{
-  $MooseX::Storage::Format::JSON::VERSION = '0.45';
-}
 BEGIN {
   $MooseX::Storage::Format::JSON::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: A JSON serialization role
+$MooseX::Storage::Format::JSON::VERSION = '0.46';
 use Moose::Role;
-
-no warnings 'once';
-
 use JSON::Any;
+use namespace::autoclean;
 
 requires 'pack';
 requires 'unpack';
@@ -39,7 +35,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc.
+Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
+Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
+Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
+Dan Brook David
 
 =head1 NAME
 
@@ -47,7 +46,7 @@ MooseX::Storage::Format::JSON - A JSON serialization role
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 SYNOPSIS
 

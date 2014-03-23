@@ -1,11 +1,9 @@
 package MooseX::Storage::Format::YAML;
-{
-  $MooseX::Storage::Format::YAML::VERSION = '0.45';
-}
 BEGIN {
   $MooseX::Storage::Format::YAML::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: A YAML serialization role
+$MooseX::Storage::Format::YAML::VERSION = '0.46';
 use Moose::Role;
 
 # When I add YAML::LibYAML
@@ -13,6 +11,7 @@ use Moose::Role;
 # -dcp
 
 use YAML::Any qw(Load Dump);
+use namespace::autoclean;
 
 requires 'pack';
 requires 'unpack';
@@ -38,10 +37,7 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
-Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
-Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
-Steinbrunner
+Interactive, Inc.
 
 =head1 NAME
 
@@ -49,7 +45,7 @@ MooseX::Storage::Format::YAML - A YAML serialization role
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 SYNOPSIS
 

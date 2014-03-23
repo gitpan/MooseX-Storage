@@ -1,18 +1,17 @@
 package MooseX::Storage;
-{
-  $MooseX::Storage::VERSION = '0.45';
-}
-# git description: v0.44-10-g01cb843
-
 BEGIN {
   $MooseX::Storage::AUTHORITY = 'cpan:STEVAN';
 }
+# git description: v0.45-17-g4a1dd0b
+$MooseX::Storage::VERSION = '0.46';
 # ABSTRACT: A serialization framework for Moose classes
-use Moose qw(confess);
 
+use Moose 0.99;
 use MooseX::Storage::Meta::Attribute::DoNotSerialize;
 use String::RewritePrefix ();
 use Module::Runtime 'use_module';
+use Carp 'confess';
+use namespace::autoclean;
 
 sub import {
     my $pkg = caller();
@@ -118,10 +117,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
-Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
-Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
-Steinbrunner io subtypes parameterized TODO
+Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
+Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
+Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
+Dan Brook David io serialisable subtypes parameterized TODO
 
 =head1 NAME
 
@@ -129,7 +128,7 @@ MooseX::Storage - A serialization framework for Moose classes
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 SYNOPSIS
 
@@ -178,14 +177,6 @@ MooseX::Storage is a serialization framework for Moose, it provides
 a very flexible and highly pluggable way to serialize Moose classes
 to a number of different formats and styles.
 
-=head2 Important Note
-
-This is still an early release of this module, so use with caution.
-It's outward facing serialization API should be considered stable,
-but I still reserve the right to make tweaks if I need too. Anything
-beyond the basic pack/unpack, freeze/thaw and load/store should not
-be relied on.
-
 =head2 Levels of Serialization
 
 There are 3 levels to the serialization, each of which builds upon
@@ -228,13 +219,23 @@ to also be used, the exception being the C<StorableFile> role.
 
 =head2 Behaviour modifiers
 
-The serialization behaviour can be changed by supplying C<traits>.
+The serialization behaviour can be changed by supplying C<traits> to either
+the class or an individual attribute.
+
 This can be done as follows:
 
   use MooseX::Storage;
+
+  # adjust behaviour for the entire class
   with Storage( traits => [Trait1, Trait2,...] );
 
-The following traits are currently bundled with C<MooseX::Storage>:
+  # adjust behaviour for an attribute
+  has my_attr => (
+    traits => [Trait1, Trait2, ...],
+    ...
+  );
+
+The following B<class traits> are currently bundled with L<MooseX::Storage>:
 
 =over 4
 
@@ -244,6 +245,25 @@ Only attributes that have been built (i.e., where the predicate returns
 'true') will be serialized. This avoids any potentially expensive computations.
 
 See L<MooseX::Storage::Traits::OnlyWhenBuilt> for details.
+
+=item DisableCycleDetection
+
+Disables the default checks for circular references, which is necessary if you
+use such references in your serialisable objects.
+
+See L<MooseX::Storage::Traits::DisableCycleDetection> for details.
+
+=back
+
+The following B<attribute traits> are currently bundled with L<MooseX::Storage>:
+
+=over 4
+
+=item DoNotSerialize
+
+Skip serialization entirely for this attribute.
+
+See L<MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize> for details.
 
 =back
 
@@ -391,6 +411,10 @@ Cory Watson <gphat@Crankwizzah.local>
 =item *
 
 Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+
+=item *
+
+Dan Brook <dan@broquaint.com>
 
 =item *
 

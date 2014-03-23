@@ -1,14 +1,13 @@
 package MooseX::Storage::Deferred;
-{
-  $MooseX::Storage::Deferred::VERSION = '0.45';
-}
 BEGIN {
   $MooseX::Storage::Deferred::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: A role for indecisive programmers
+$MooseX::Storage::Deferred::VERSION = '0.46';
 use Moose::Role;
-
 with 'MooseX::Storage::Basic';
+use Carp 'confess';
+use namespace::autoclean;
 
 sub __get_method {
     my ( $self, $basename, $value, $method_name ) = @_;
@@ -72,7 +71,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. JSONpm
+Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
+Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
+Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
+Dan Brook David JSONpm
 
 =head1 NAME
 
@@ -80,7 +82,7 @@ MooseX::Storage::Deferred - A role for indecisive programmers
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 SYNOPSIS
 

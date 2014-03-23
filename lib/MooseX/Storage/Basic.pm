@@ -1,15 +1,13 @@
 package MooseX::Storage::Basic;
-{
-  $MooseX::Storage::Basic::VERSION = '0.45';
-}
 BEGIN {
   $MooseX::Storage::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: The simplest level of serialization
+$MooseX::Storage::Basic::VERSION = '0.46';
 use Moose::Role;
-
 use MooseX::Storage::Engine;
 use String::RewritePrefix;
+use namespace::autoclean;
 
 sub pack {
     my ( $self, %args ) = @_;
@@ -70,10 +68,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
-Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
-Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
-Steinbrunner
+Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
+Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
+Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
+Dan Brook David
 
 =head1 NAME
 
@@ -81,7 +79,7 @@ MooseX::Storage::Basic - The simplest level of serialization
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 SYNOPSIS
 
@@ -107,7 +105,7 @@ version 0.45
   # unpack the hash into a class
   my $p2 = Point->unpack({ __CLASS__ => 'Point-0.01', x => 10, y => 10 });
 
-  # unpack the hash, with insertion of paramaters
+  # unpack the hash, with injection of additional paramaters
   my $p3 = Point->unpack( $p->pack, inject => { x => 11 } );
 
 =head1 DESCRIPTION
@@ -128,9 +126,9 @@ you know what you are doing, you can bypass this check.
 This trait is applied on a perl-case basis. To set this flag for all objects
 that inherit from this role, see L<MooseX::Storage::Traits::DisableCycleDetection>.
 
-=item B<unpack ($data [, insert => { key => val, ... } ] )>
+=item B<unpack ($data [, inject => { key => val, ... } ] )>
 
-Providing the C<insert> argument let's you supply additional arguments to
+Providing the C<inject> argument lets you supply additional arguments to
 the class' C<new> function, or override ones from the serialized data.
 
 =back

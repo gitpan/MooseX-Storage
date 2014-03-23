@@ -1,13 +1,13 @@
 package MooseX::Storage::Engine;
-{
-  $MooseX::Storage::Engine::VERSION = '0.45';
-}
 BEGIN {
   $MooseX::Storage::Engine::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: The meta-engine to handle collapsing and expanding objects
+$MooseX::Storage::Engine::VERSION = '0.46';
 use Moose;
-use Scalar::Util qw(refaddr);
+use Scalar::Util qw(refaddr blessed);
+use Carp 'confess';
+use namespace::autoclean;
 
 # the class marker when
 # serializing an object.
@@ -378,10 +378,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
-Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
-Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
-Steinbrunner
+Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
+Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
+Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
+Dan Brook David
 
 =head1 NAME
 
@@ -389,7 +389,7 @@ MooseX::Storage::Engine - The meta-engine to handle collapsing and expanding obj
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 DESCRIPTION
 

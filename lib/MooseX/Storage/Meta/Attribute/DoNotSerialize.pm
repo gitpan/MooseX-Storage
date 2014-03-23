@@ -1,25 +1,20 @@
 package MooseX::Storage::Meta::Attribute::DoNotSerialize;
-{
-  $MooseX::Storage::Meta::Attribute::DoNotSerialize::VERSION = '0.45';
-}
 BEGIN {
   $MooseX::Storage::Meta::Attribute::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: A custom meta-attribute to bypass serialization
+$MooseX::Storage::Meta::Attribute::DoNotSerialize::VERSION = '0.46';
 use Moose;
-
+use namespace::autoclean;
 extends 'Moose::Meta::Attribute';
    with 'MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize';
 
 # register this alias ...
 package Moose::Meta::Attribute::Custom::DoNotSerialize;
-{
-  $Moose::Meta::Attribute::Custom::DoNotSerialize::VERSION = '0.45';
-}
 BEGIN {
   $Moose::Meta::Attribute::Custom::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
 }
-
+$Moose::Meta::Attribute::Custom::DoNotSerialize::VERSION = '0.46';
 sub register_implementation { 'MooseX::Storage::Meta::Attribute::DoNotSerialize' }
 
 1;
@@ -31,10 +26,10 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
-Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
-Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
-Steinbrunner culted
+Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
+Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
+Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
+Dan Brook David culted
 
 =head1 NAME
 
@@ -42,7 +37,7 @@ MooseX::Storage::Meta::Attribute::DoNotSerialize - A custom meta-attribute to by
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 SYNOPSIS
 

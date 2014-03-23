@@ -1,14 +1,12 @@
 package MooseX::Storage::Format::Storable;
-{
-  $MooseX::Storage::Format::Storable::VERSION = '0.45';
-}
 BEGIN {
   $MooseX::Storage::Format::Storable::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: A Storable serialization role
+$MooseX::Storage::Format::Storable::VERSION = '0.46';
 use Moose::Role;
-
 use Storable ();
+use namespace::autoclean;
 
 requires 'pack';
 requires 'unpack';
@@ -34,10 +32,7 @@ __END__
 =encoding UTF-8
 
 =for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Florian Ragwitz Johannes Plunien Jonathan Rockway Yu Jos
-Boumans Karen Etheridge Ricardo Signes Robert Boone Shawn M Moore Tomas
-Doran Cory Yuval Kogman Watson Dagfinn Ilmari Mannsåker David Golden
-Steinbrunner IPC Storable's
+Interactive, Inc. IPC Storable's
 
 =head1 NAME
 
@@ -45,7 +40,7 @@ MooseX::Storage::Format::Storable - A Storable serialization role
 
 =head1 VERSION
 
-version 0.45
+version 0.46
 
 =head1 SYNOPSIS
 
