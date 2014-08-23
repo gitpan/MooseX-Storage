@@ -1,9 +1,6 @@
 package MooseX::Storage::Traits::DisableCycleDetection;
-BEGIN {
-  $MooseX::Storage::Traits::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: A custom trait to bypass cycle detection
-$MooseX::Storage::Traits::DisableCycleDetection::VERSION = '0.46';
+$MooseX::Storage::Traits::DisableCycleDetection::VERSION = '0.47';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -34,19 +31,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David culted
-
 =head1 NAME
 
 MooseX::Storage::Traits::DisableCycleDetection - A custom trait to bypass cycle detection
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 
@@ -73,6 +64,8 @@ references, so if you know what you are doing, you can bypass this check.
 
 This trait is applied to all objects that inherit from it. To use this
 on a per-case basis, see C<disable_cycle_check> in L<MooseX::Storage::Basic>.
+
+=for stopwords culted
 
 See the SYNOPSIS for a nice example that can be easily cargo-culted.
 

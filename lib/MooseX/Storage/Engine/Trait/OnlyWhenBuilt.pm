@@ -1,9 +1,6 @@
 package MooseX::Storage::Engine::Trait::OnlyWhenBuilt;
-BEGIN {
-  $MooseX::Storage::Engine::Trait::OnlyWhenBuilt::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: An engine trait to bypass serialization
-$MooseX::Storage::Engine::Trait::OnlyWhenBuilt::VERSION = '0.46';
+$MooseX::Storage::Engine::Trait::OnlyWhenBuilt::VERSION = '0.47';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -30,19 +27,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David
-
 =head1 NAME
 
 MooseX::Storage::Engine::Trait::OnlyWhenBuilt - An engine trait to bypass serialization
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 

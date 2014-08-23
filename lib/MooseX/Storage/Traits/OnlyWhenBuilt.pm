@@ -1,9 +1,6 @@
 package MooseX::Storage::Traits::OnlyWhenBuilt;
-BEGIN {
-  $MooseX::Storage::Traits::OnlyWhenBuilt::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: A custom trait to bypass serialization
-$MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.46';
+$MooseX::Storage::Traits::OnlyWhenBuilt::VERSION = '0.47';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -34,19 +31,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David culted
-
 =head1 NAME
 
 MooseX::Storage::Traits::OnlyWhenBuilt - A custom trait to bypass serialization
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 
@@ -79,6 +70,8 @@ serialization if it has not been built yet. If you invoke C<Storage()>
 as outlined in the C<Synopsis>, only attributes that have been built
 (i.e., where the predicate returns 'true') will be serialized.
 This avoids any potentially expensive computations.
+
+=for stopwords culted
 
 See the SYNOPSIS for a nice example that can be easily cargo-culted.
 

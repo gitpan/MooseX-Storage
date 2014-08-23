@@ -1,9 +1,6 @@
 package MooseX::Storage::Engine::Trait::DisableCycleDetection;
-BEGIN {
-  $MooseX::Storage::Engine::Trait::DisableCycleDetection::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: A custom trait to bypass cycle detection
-$MooseX::Storage::Engine::Trait::DisableCycleDetection::VERSION = '0.46';
+$MooseX::Storage::Engine::Trait::DisableCycleDetection::VERSION = '0.47';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -21,19 +18,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David
-
 =head1 NAME
 
 MooseX::Storage::Engine::Trait::DisableCycleDetection - A custom trait to bypass cycle detection
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 

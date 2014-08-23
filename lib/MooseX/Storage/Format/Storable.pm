@@ -1,9 +1,6 @@
 package MooseX::Storage::Format::Storable;
-BEGIN {
-  $MooseX::Storage::Format::Storable::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: A Storable serialization role
-$MooseX::Storage::Format::Storable::VERSION = '0.46';
+$MooseX::Storage::Format::Storable::VERSION = '0.47';
 use Moose::Role;
 use Storable ();
 use namespace::autoclean;
@@ -31,16 +28,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. IPC Storable's
-
 =head1 NAME
 
 MooseX::Storage::Format::Storable - A Storable serialization role
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 
@@ -68,9 +62,13 @@ version 0.46
 
 =head1 DESCRIPTION
 
+=for stopwords IPC
+
 This module will C<thaw> and C<freeze> Moose classes using Storable. It
 uses C<Storable::nfreeze> by default so that it can be easily used
 in IPC scenarios across machines or just locally.
+
+=for stopwords Storable's
 
 One important thing to note is that this module does not mix well
 with the IO modules. The structures that C<freeze> and C<thaw> deal with

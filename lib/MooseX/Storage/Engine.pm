@@ -1,9 +1,6 @@
 package MooseX::Storage::Engine;
-BEGIN {
-  $MooseX::Storage::Engine::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: The meta-engine to handle collapsing and expanding objects
-$MooseX::Storage::Engine::VERSION = '0.46';
+$MooseX::Storage::Engine::VERSION = '0.47';
 use Moose;
 use Scalar::Util qw(refaddr blessed);
 use Carp 'confess';
@@ -61,14 +58,16 @@ sub expand_object {
 sub collapse_attribute {
     my ($self, $attr, $options)  = @_;
     my $value = $self->collapse_attribute_value($attr, $options);
-    return if !defined($value);
+
+    return unless $attr->has_value($self->object);
     $self->storage->{$attr->name} = $value;
 }
 
 sub expand_attribute {
     my ($self, $attr, $data, $options)  = @_;
+    return unless exists $data->{$attr->name};
     my $value = $self->expand_attribute_value($attr, $data->{$attr->name}, $options);
-    $self->storage->{$attr->name} = defined $value ? $value : return;
+    $self->storage->{$attr->name} = $value;
 }
 
 sub collapse_attribute_value {
@@ -377,19 +376,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David
-
 =head1 NAME
 
 MooseX::Storage::Engine - The meta-engine to handle collapsing and expanding objects
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 DESCRIPTION
 

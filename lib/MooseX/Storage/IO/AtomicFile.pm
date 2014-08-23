@@ -1,9 +1,6 @@
 package MooseX::Storage::IO::AtomicFile;
-BEGIN {
-  $MooseX::Storage::IO::AtomicFile::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: An Atomic File I/O role
-$MooseX::Storage::IO::AtomicFile::VERSION = '0.46';
+$MooseX::Storage::IO::AtomicFile::VERSION = '0.47';
 use Moose::Role;
 use MooseX::Storage::Engine::IO::AtomicFile;
 use namespace::autoclean;
@@ -25,19 +22,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David
-
 =head1 NAME
 
 MooseX::Storage::IO::AtomicFile - An Atomic File I/O role
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 

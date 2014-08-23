@@ -1,9 +1,6 @@
 package MooseX::Storage::Format::YAML;
-BEGIN {
-  $MooseX::Storage::Format::YAML::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: A YAML serialization role
-$MooseX::Storage::Format::YAML::VERSION = '0.46';
+$MooseX::Storage::Format::YAML::VERSION = '0.47';
 use Moose::Role;
 
 # When I add YAML::LibYAML
@@ -36,16 +33,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc.
-
 =head1 NAME
 
 MooseX::Storage::Format::YAML - A YAML serialization role
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 

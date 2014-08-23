@@ -10,6 +10,7 @@ use Test::Requires qw(
     YAML::XS
     Test::Without::Module
 );
+diag 'using YAML backend: ', YAML::Any->implementation;
 
 BEGIN {
     Test::Without::Module->import(YAML::Any->order);
@@ -63,4 +64,3 @@ BEGIN {
     is( $bar->object->number, 2,
         '... got the right number (in the embedded object)' );
 }
-

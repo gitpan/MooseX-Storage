@@ -1,18 +1,12 @@
 package MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize;
-BEGIN {
-  $MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: A custom meta-attribute-trait to bypass serialization
-$MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.46';
+$MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize::VERSION = '0.47';
 use Moose::Role;
 use namespace::autoclean;
 
 # register this alias ...
 package Moose::Meta::Attribute::Custom::Trait::DoNotSerialize;
-BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::AUTHORITY = 'cpan:STEVAN';
-}
-$Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.46';
+$Moose::Meta::Attribute::Custom::Trait::DoNotSerialize::VERSION = '0.47';
 sub register_implementation { 'MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize' }
 
 1;
@@ -23,19 +17,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David culted
-
 =head1 NAME
 
 MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize - A custom meta-attribute-trait to bypass serialization
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 
@@ -57,6 +45,8 @@ version 0.46
   1;
 
 =head1 DESCRIPTION
+
+=for stopwords culted
 
 Sometimes you don't want a particular attribute to be part of the
 serialization, in this case, you want to make sure that attribute

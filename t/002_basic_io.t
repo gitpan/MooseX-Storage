@@ -10,6 +10,7 @@ use File::Spec::Functions;
 my $dir = tempdir;
 
 use Test::Requires 'JSON::Any';
+diag 'using JSON backend: ', JSON::Any->handlerType;
 
 BEGIN {
     plan tests => 10;
@@ -63,4 +64,3 @@ my $file = catfile($dir, 'temp.json');
     isa_ok($foo->object, 'Foo');
     is($foo->object->number, 2, '... got the right number (in the embedded object)');
 }
-

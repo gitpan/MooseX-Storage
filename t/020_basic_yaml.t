@@ -10,6 +10,7 @@ use Test::Requires qw(
     YAML
     Test::Without::Module
 );
+diag 'using YAML backend: ', YAML::Any->implementation;
 
 BEGIN {
     Test::Without::Module->import(YAML::Any->order);
@@ -19,7 +20,6 @@ BEGIN {
 }
 
 {
-
     package Foo;
     use Moose;
     use MooseX::Storage;
@@ -64,4 +64,3 @@ BEGIN {
     is( $bar->object->number, 2,
         '... got the right number (in the embedded object)' );
 }
-

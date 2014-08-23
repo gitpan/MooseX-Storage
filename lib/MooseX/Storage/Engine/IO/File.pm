@@ -1,9 +1,6 @@
 package MooseX::Storage::Engine::IO::File;
-BEGIN {
-  $MooseX::Storage::Engine::IO::File::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: The actual file storage mechanism.
-$MooseX::Storage::Engine::IO::File::VERSION = '0.46';
+$MooseX::Storage::Engine::IO::File::VERSION = '0.47';
 use Moose;
 use IO::File;
 use Carp 'confess';
@@ -38,16 +35,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc.
-
 =head1 NAME
 
 MooseX::Storage::Engine::IO::File - The actual file storage mechanism.
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 DESCRIPTION
 

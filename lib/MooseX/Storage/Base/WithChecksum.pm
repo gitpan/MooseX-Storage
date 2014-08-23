@@ -1,9 +1,6 @@
 package MooseX::Storage::Base::WithChecksum;
-BEGIN {
-  $MooseX::Storage::Base::WithChecksum::AUTHORITY = 'cpan:STEVAN';
-}
 # ABSTRACT: A more secure serialization role
-$MooseX::Storage::Base::WithChecksum::VERSION = '0.46';
+$MooseX::Storage::Base::WithChecksum::VERSION = '0.47';
 use Moose::Role;
 with 'MooseX::Storage::Basic';
 
@@ -102,19 +99,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David
-
 =head1 NAME
 
 MooseX::Storage::Base::WithChecksum - A more secure serialization role
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 DESCRIPTION
 

@@ -19,6 +19,11 @@ use Test::Requires qw(
     JSON::Any
     IO::AtomicFile
 );
+diag 'using JSON backend: ', JSON::Any->handlerType;
+
+binmode $_, ':utf8' foreach map { Test::Builder->new->$_ } qw(output failure_output todo_output);
+binmode STDOUT, ':utf8';
+binmode STDERR, ':utf8';
 
 plan tests => 8;
 use_ok('MooseX::Storage');

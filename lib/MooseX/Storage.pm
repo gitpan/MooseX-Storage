@@ -1,10 +1,8 @@
 package MooseX::Storage;
-BEGIN {
-  $MooseX::Storage::AUTHORITY = 'cpan:STEVAN';
-}
-# git description: v0.45-17-g4a1dd0b
-$MooseX::Storage::VERSION = '0.46';
+# git description: v0.46-17-g342ddd4
+$MooseX::Storage::VERSION = '0.47';
 # ABSTRACT: A serialization framework for Moose classes
+# KEYWORDS: moose extension serial serialization class object store storage types strings
 
 use Moose 0.99;
 use MooseX::Storage::Meta::Attribute::DoNotSerialize;
@@ -58,12 +56,11 @@ sub _expand_role {
         my $class = $self->_rewrite_role_name($base, $value);
         use_module($class);
 
-        my $role = $class;
-
-        if ($class->meta->isa(
-            'MooseX::Role::Parameterized::Meta::Role::Parameterizable'
-        )) {
-            $role = $class->meta->generate_role(parameters => undef);
+        if ($class->meta->isa('MooseX::Role::Parameterized::Meta::Role::Parameterizable')
+            or ($class->meta->meta->can('does_role')
+                && $class->meta->meta->does_role('MooseX::Role::Parameterized::Meta::Trait::Parameterizable'))
+        ) {
+            my $role = $class->meta->generate_role(parameters => undef);
             $HORRIBLE_GC_AVOIDANCE_HACK{ $role->name } = $role;
             return $role->name;
         }
@@ -116,19 +113,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Chris Prather Stevan Little יובל קוג'מן (Yuval Kogman) Infinity
-Interactive, Inc. Golden Steinbrunner Florian Ragwitz Johannes Plunien
-Jonathan Rockway Yu Jos Boumans Karen Etheridge Ricardo Signes Robert Boone
-Shawn M Moore Cory Tomas Doran Yuval Kogman Watson Dagfinn Ilmari Mannsåker
-Dan Brook David io serialisable subtypes parameterized TODO
-
 =head1 NAME
 
 MooseX::Storage - A serialization framework for Moose classes
 
 =head1 VERSION
 
-version 0.46
+version 0.47
 
 =head1 SYNOPSIS
 
@@ -207,6 +198,8 @@ specific serialization format and Perl land.
 This level is optional, if you don't want/need it, you don't have to
 have it. You can just use C<pack>/C<unpack> instead.
 
+=for stopwords io
+
 =item B<io>
 
 The third (io) level is C<load> and C<store>. In this level we are reading
@@ -248,6 +241,8 @@ See L<MooseX::Storage::Traits::OnlyWhenBuilt> for details.
 
 =item DisableCycleDetection
 
+=for stopwords serialisable
+
 Disables the default checks for circular references, which is necessary if you
 use such references in your serialisable objects.
 
@@ -282,6 +277,8 @@ With Array and Hash references the first level down is inspected and
 any objects found are serialized/deserialized for you. We do not do
 this recursively by default, however this feature may become an
 option eventually.
+
+=for stopwords subtypes
 
 The specific serialize/deserialize routine is determined by the
 Moose type constraint a specific attribute has. In most cases subtypes
@@ -332,6 +329,8 @@ that is not under the default namespace prefix, start with an equal sign:
 
   Storage(format => '=My::Private::JSONFormat');
 
+=for stopwords parameterized
+
 To use a parameterized role (for which, see L<MooseX::Role::Parameterized>) you
 can pass an arrayref of the role name (in short or long form, as above) and its
 parameters:
@@ -355,6 +354,8 @@ parameters:
 =item B<meta>
 
 =back
+
+=for stopwords TODO
 
 =head1 TODO
 
@@ -398,7 +399,21 @@ the same terms as the Perl 5 programming language system itself.
 
 =head1 CONTRIBUTORS
 
+=for stopwords Karen Etheridge Tomas Doran Ricardo Signes Chris Prather Yuval Kogman Jos Boumans Shawn M Moore Jonathan Yu Robert Boone Dagfinn Ilmari Mannsåker Cory Watson Dan Brook David Steinbrunner Jason Pope Johannes Plunien Rockway Florian Ragwitz Golden
+
 =over 4
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=item *
+
+Ricardo Signes <rjbs@cpan.org>
 
 =item *
 
@@ -406,7 +421,23 @@ Chris Prather <chris@prather.org>
 
 =item *
 
-Cory Watson <gphat@Crankwizzah.local>
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+Jos Boumans <jos@dwim.org>
+
+=item *
+
+Shawn M Moore <sartak@gmail.com>
+
+=item *
+
+Jonathan Yu <frequency@cpan.org>
+
+=item *
+
+Robert Boone <robo4288@gmail.com>
 
 =item *
 
@@ -414,11 +445,11 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 
 =item *
 
-Dan Brook <dan@broquaint.com>
+Cory Watson <gphat@Crankwizzah.local>
 
 =item *
 
-David Golden <dagolden@cpan.org>
+Dan Brook <dan@broquaint.com>
 
 =item *
 
@@ -426,7 +457,7 @@ David Steinbrunner <dsteinbrunner@pobox.com>
 
 =item *
 
-Florian Ragwitz <rafl@debian.org>
+Jason Pope <cowholio4@gmail.com>
 
 =item *
 
@@ -438,35 +469,11 @@ Jonathan Rockway <jon@jrock.us>
 
 =item *
 
-Jonathan Yu <frequency@cpan.org>
+Florian Ragwitz <rafl@debian.org>
 
 =item *
 
-Jos Boumans <jos@dwim.org>
-
-=item *
-
-Karen Etheridge <ether@cpan.org>
-
-=item *
-
-Ricardo Signes <rjbs@cpan.org>
-
-=item *
-
-Robert Boone <robo4288@gmail.com>
-
-=item *
-
-Shawn M Moore <sartak@gmail.com>
-
-=item *
-
-Tomas Doran <bobtfish@bobtfish.net>
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
+David Golden <dagolden@cpan.org>
 
 =back
 
