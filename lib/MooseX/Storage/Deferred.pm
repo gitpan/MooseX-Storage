@@ -1,6 +1,6 @@
 package MooseX::Storage::Deferred;
 # ABSTRACT: A role for indecisive programmers
-$MooseX::Storage::Deferred::VERSION = '0.47';
+$MooseX::Storage::Deferred::VERSION = '0.48';
 use Moose::Role;
 with 'MooseX::Storage::Basic';
 use Carp 'confess';
@@ -73,7 +73,7 @@ MooseX::Storage::Deferred - A role for indecisive programmers
 
 =head1 VERSION
 
-version 0.47
+version 0.48
 
 =head1 SYNOPSIS
 

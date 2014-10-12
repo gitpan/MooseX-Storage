@@ -1,6 +1,6 @@
 package MooseX::Storage;
-# git description: v0.46-17-g342ddd4
-$MooseX::Storage::VERSION = '0.47';
+# git description: v0.47-5-ge424fc2
+$MooseX::Storage::VERSION = '0.48';
 # ABSTRACT: A serialization framework for Moose classes
 # KEYWORDS: moose extension serial serialization class object store storage types strings
 
@@ -119,7 +119,7 @@ MooseX::Storage - A serialization framework for Moose classes
 
 =head1 VERSION
 
-version 0.47
+version 0.48
 
 =head1 SYNOPSIS
 

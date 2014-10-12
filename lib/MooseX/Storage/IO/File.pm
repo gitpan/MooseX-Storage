@@ -1,6 +1,6 @@
 package MooseX::Storage::IO::File;
 # ABSTRACT: A basic File I/O role
-$MooseX::Storage::IO::File::VERSION = '0.47';
+$MooseX::Storage::IO::File::VERSION = '0.48';
 use Moose::Role;
 use MooseX::Storage::Engine::IO::File;
 use namespace::autoclean;
@@ -34,7 +34,7 @@ MooseX::Storage::IO::File - A basic File I/O role
 
 =head1 VERSION
 
-version 0.47
+version 0.48
 
 =head1 SYNOPSIS
 

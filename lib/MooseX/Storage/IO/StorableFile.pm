@@ -1,6 +1,6 @@
 package MooseX::Storage::IO::StorableFile;
 # ABSTRACT: An Storable File I/O role
-$MooseX::Storage::IO::StorableFile::VERSION = '0.47';
+$MooseX::Storage::IO::StorableFile::VERSION = '0.48';
 use Moose::Role;
 use Storable ();
 use namespace::autoclean;
@@ -42,7 +42,7 @@ MooseX::Storage::IO::StorableFile - An Storable File I/O role
 
 =head1 VERSION
 
-version 0.47
+version 0.48
 
 =head1 SYNOPSIS
 

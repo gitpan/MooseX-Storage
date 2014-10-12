@@ -12,7 +12,7 @@ build_requires:
   Moose::Util::TypeConstraints: '0'
   Test::Deep: '0'
   Test::Fatal: '0'
-  Test::More: '0'
+  Test::More: '0.88'
   Test::Requires: '0'
   overload: '0'
   strict: '0'
@@ -20,9 +20,8 @@ build_requires:
   warnings: '0'
 configure_requires:
   ExtUtils::MakeMaker: '0'
-  Module::Build::Tiny: '0.037'
-dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
+dynamic_config: 1
+generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142690'
 keywords:
   - moose
   - extension
@@ -54,7 +53,7 @@ optional_features:
     recommends:
       MooseX::Storage::Format::JSONpm: '0'
     requires:
-      JSON::Any: '1.15'
+      JSON::MaybeXS: '1.001000'
   Storable:
     description: 'Serialize to Storable. You should have at least one serialization format.'
     requires:
@@ -70,74 +69,74 @@ optional_features:
 provides:
   Moose::Meta::Attribute::Custom::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: '0.47'
+    version: '0.48'
   Moose::Meta::Attribute::Custom::Trait::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage:
     file: lib/MooseX/Storage.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Base::WithChecksum:
     file: lib/MooseX/Storage/Base/WithChecksum.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Basic:
     file: lib/MooseX/Storage/Basic.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Deferred:
     file: lib/MooseX/Storage/Deferred.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Engine:
     file: lib/MooseX/Storage/Engine.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Engine::IO::AtomicFile:
     file: lib/MooseX/Storage/Engine/IO/AtomicFile.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Engine::IO::File:
     file: lib/MooseX/Storage/Engine/IO/File.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Engine::Trait::DisableCycleDetection:
     file: lib/MooseX/Storage/Engine/Trait/DisableCycleDetection.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Engine::Trait::OnlyWhenBuilt:
     file: lib/MooseX/Storage/Engine/Trait/OnlyWhenBuilt.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Format::JSON:
     file: lib/MooseX/Storage/Format/JSON.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Format::Storable:
     file: lib/MooseX/Storage/Format/Storable.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Format::YAML:
     file: lib/MooseX/Storage/Format/YAML.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::IO::AtomicFile:
     file: lib/MooseX/Storage/IO/AtomicFile.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::IO::File:
     file: lib/MooseX/Storage/IO/File.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::IO::StorableFile:
     file: lib/MooseX/Storage/IO/StorableFile.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Meta::Attribute::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/DoNotSerialize.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize:
     file: lib/MooseX/Storage/Meta/Attribute/Trait/DoNotSerialize.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Traits::DisableCycleDetection:
     file: lib/MooseX/Storage/Traits/DisableCycleDetection.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Traits::OnlyWhenBuilt:
     file: lib/MooseX/Storage/Traits/OnlyWhenBuilt.pm
-    version: '0.47'
+    version: '0.48'
   MooseX::Storage::Util:
     file: lib/MooseX/Storage/Util.pm
-    version: '0.47'
+    version: '0.48'
 recommends:
   IO::AtomicFile: '0'
   IO::File: '0'
-  JSON::Any: '1.15'
+  JSON::MaybeXS: '1.001000'
   MooseX::Storage::Format::JSONpm: '0'
   Storable: '0'
   YAML: '0'
@@ -162,7 +161,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Storage
   homepage: https://github.com/moose/MooseX-Storage
   repository: https://github.com/moose/MooseX-Storage.git
-version: '0.47'
+version: '0.48'
 x_Dist_Zilla:
   perl:
     version: '5.021003'
@@ -185,7 +184,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::NextVersion'
-      version: '2.023'
+      version: '2.025'
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       config:
@@ -197,7 +196,7 @@ x_Dist_Zilla:
           phase: build
           skip: []
       name: '@Author::ETHER/stale modules, build'
-      version: '0.024'
+      version: '0.027'
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       config:
@@ -208,7 +207,7 @@ x_Dist_Zilla:
           phase: release
           skip: []
       name: '@Author::ETHER/stale modules, release'
-      version: '0.024'
+      version: '0.027'
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: '@Author::ETHER/ExecDir'
@@ -233,7 +232,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::GatherDir'
-      version: '2.023'
+      version: '2.025'
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: '@Author::ETHER/MetaYAML'
@@ -283,7 +282,7 @@ x_Dist_Zilla:
           skips:
             - ^MooseX::Storage::((Engine::)?IO::|Format::)
       name: '@Author::ETHER/Test::Compile'
-      version: '2.046'
+      version: '2.048'
     -
       class: Dist::Zilla::Plugin::Test::NoTabs
       config:
@@ -340,7 +339,7 @@ x_Dist_Zilla:
           filename: xt/release/kwalitee.t
           skiptest: []
       name: '@Author::ETHER/Test::Kwalitee'
-      version: '2.10'
+      version: '2.11'
     -
       class: Dist::Zilla::Plugin::MojibakeTests
       name: '@Author::ETHER/MojibakeTests'
@@ -361,6 +360,13 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::PkgVersion
       name: '@Author::ETHER/PkgVersion'
       version: '5.020'
+    -
+      class: Dist::Zilla::Plugin::AuthorityFromModule
+      config:
+        Dist::Zilla::Plugin::AuthorityFromModule:
+          module: MooseX::Storage
+      name: '@Author::ETHER/AuthorityFromModule'
+      version: '0.002'
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::ETHER/Authority'
@@ -454,7 +460,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       name: '@Author::ETHER/ReadmeAnyFromPod'
-      version: '0.142250'
+      version: '0.142470'
     -
       class: Dist::Zilla::Plugin::GithubMeta
       name: '@Author::ETHER/GithubMeta'
@@ -483,7 +489,7 @@ x_Dist_Zilla:
           inherit_version: '1'
           meta_noindex: '1'
       name: '@Author::ETHER/MetaProvides::Package'
-      version: '2.000004'
+      version: '2.001002'
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::ETHER/MetaConfig'
@@ -536,19 +542,12 @@ x_Dist_Zilla:
       name: '@Author::ETHER/pluginbundle_version'
       version: '5.020'
     -
-      class: Dist::Zilla::Plugin::MakeMaker::Fallback
+      class: Dist::Zilla::Plugin::MakeMaker
       config:
         Dist::Zilla::Role::TestRunner:
           default_jobs: 9
-      name: '@Author::ETHER/MakeMaker::Fallback'
-      version: '0.013'
-    -
-      class: Dist::Zilla::Plugin::ModuleBuildTiny::Fallback
-      config:
-        Dist::Zilla::Role::TestRunner:
-          default_jobs: 9
-      name: '@Author::ETHER/ModuleBuildTiny::Fallback'
-      version: '0.005'
+      name: '@Author::ETHER/MakeMaker'
+      version: '5.020'
     -
       class: Dist::Zilla::Plugin::InstallGuide
       name: '@Author::ETHER/InstallGuide'
@@ -573,9 +572,17 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Run::Role::Runner:
           run:
-            - "bash -c \"if [[ `dirname %d` != .build ]]; then test -e .ackrc && grep -q -- '--ignore-dir=%d' .ackrc || echo '--ignore-dir=%d' >> .ackrc; fi; if [[ %d =~ ^%n-[.[:xdigit:]]+$ ]]; then rm -f .latest; ln -s %d .latest; fi\""
-      name: '@Author::ETHER/Run::AfterBuild'
-      version: '0.023'
+            - "bash -c \"if [[ `dirname %d` != .build ]]; then test -e .ackrc && grep -q -- '--ignore-dir=%d' .ackrc || echo '--ignore-dir=%d' >> .ackrc; fi\""
+      name: '@Author::ETHER/.ackrc'
+      version: '0.026'
+    -
+      class: Dist::Zilla::Plugin::Run::AfterBuild
+      config:
+        Dist::Zilla::Plugin::Run::Role::Runner:
+          eval:
+            - "if ('%d' =~ /^%n-[.[:xdigit:]]+$/) { unlink '.latest'; symlink '%d', '.latest'; }"
+      name: '@Author::ETHER/.latest'
+      version: '0.026'
     -
       class: Dist::Zilla::Plugin::CheckStrictVersion
       name: '@Author::ETHER/CheckStrictVersion'
@@ -592,7 +599,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/initial check'
-      version: '2.023'
+      version: '2.025'
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts
       config:
@@ -631,7 +638,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/after tests'
-      version: '2.023'
+      version: '2.025'
     -
       class: Dist::Zilla::Plugin::CheckIssues
       name: '@Author::ETHER/CheckIssues'
@@ -648,10 +655,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Run::AfterRelease
       config:
         Dist::Zilla::Plugin::Run::Role::Runner:
-          run:
-            - 'rm -f README.md'
+          eval:
+            - "unlink 'README.md'"
       name: '@Author::ETHER/remove old READMEs'
-      version: '0.023'
+      version: '0.026'
     -
       class: Dist::Zilla::Plugin::Git::Commit
       config:
@@ -672,21 +679,21 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Commit'
-      version: '2.023'
+      version: '2.025'
     -
       class: Dist::Zilla::Plugin::Git::Tag
       config:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: v0.47
+          tag: v0.48
           tag_format: v%v%t
           tag_message: v%v%t
           time_zone: local
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Tag'
-      version: '2.023'
+      version: '2.025'
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ETHER/GitHub::Update'
@@ -701,14 +708,14 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Push'
-      version: '2.023'
+      version: '2.025'
     -
       class: Dist::Zilla::Plugin::Run::AfterRelease
       config:
         Dist::Zilla::Plugin::Run::Role::Runner:
           run: REDACTED
       name: '@Author::ETHER/install release'
-      version: '0.023'
+      version: '0.026'
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
       name: '@Author::ETHER/ConfirmRelease'
@@ -721,10 +728,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Test::CleanNamespaces
       config:
         Dist::Zilla::Plugin::Test::CleanNamespaces:
-          filename: xt/release/clean-namespaces.t
+          filename: xt/author/clean-namespaces.t
           skips: []
       name: Test::CleanNamespaces
-      version: '0.005'
+      version: '0.006'
     -
       class: Dist::Zilla::Plugin::Prereqs::Soften
       config:
@@ -736,7 +743,11 @@ x_Dist_Zilla:
           modules_from_features: '1'
           to_relationship: recommends
       name: Prereqs::Soften
-      version: '0.004002'
+      version: '0.005001'
+    -
+      class: Dist::Zilla::Plugin::DynamicPrereqs
+      name: 'via OptionalFeature (JSON-Runtime)'
+      version: '0.008'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -747,11 +758,12 @@ x_Dist_Zilla:
           name: JSON
           phase: runtime
           prereqs:
-            JSON::Any: '1.15'
+            JSON::MaybeXS: '1.001000'
+          prompt: '1'
           require_develop: '1'
           type: requires
       name: JSON-Runtime
-      version: '0.014'
+      version: '0.017'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -763,10 +775,15 @@ x_Dist_Zilla:
           phase: runtime
           prereqs:
             MooseX::Storage::Format::JSONpm: '0'
+          prompt: '0'
           require_develop: '1'
           type: recommends
       name: JSON-RuntimeRecommends
-      version: '0.014'
+      version: '0.017'
+    -
+      class: Dist::Zilla::Plugin::DynamicPrereqs
+      name: 'via OptionalFeature (JSON-Test)'
+      version: '0.008'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -778,10 +795,15 @@ x_Dist_Zilla:
           phase: test
           prereqs:
             Test::Deep::JSON: '0'
+          prompt: '1'
           require_develop: '1'
           type: requires
       name: JSON-Test
-      version: '0.014'
+      version: '0.017'
+    -
+      class: Dist::Zilla::Plugin::DynamicPrereqs
+      name: 'via OptionalFeature (YAML-Runtime)'
+      version: '0.008'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -793,10 +815,11 @@ x_Dist_Zilla:
           phase: runtime
           prereqs:
             YAML::Any: '0'
+          prompt: '1'
           require_develop: '1'
           type: requires
       name: YAML-Runtime
-      version: '0.014'
+      version: '0.017'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -810,10 +833,15 @@ x_Dist_Zilla:
             YAML: '0'
             YAML::Syck: '0'
             YAML::XS: '0'
+          prompt: '0'
           require_develop: '1'
           type: recommends
       name: YAML-RuntimeRecommends
-      version: '0.014'
+      version: '0.017'
+    -
+      class: Dist::Zilla::Plugin::DynamicPrereqs
+      name: 'via OptionalFeature (YAML-Test)'
+      version: '0.008'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -825,10 +853,15 @@ x_Dist_Zilla:
           phase: test
           prereqs:
             Test::Without::Module: '0'
+          prompt: '1'
           require_develop: '1'
           type: requires
       name: YAML-Test
-      version: '0.014'
+      version: '0.017'
+    -
+      class: Dist::Zilla::Plugin::DynamicPrereqs
+      name: 'via OptionalFeature (Storable)'
+      version: '0.008'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -840,10 +873,15 @@ x_Dist_Zilla:
           phase: runtime
           prereqs:
             Storable: '0'
+          prompt: '1'
           require_develop: '1'
           type: requires
       name: Storable
-      version: '0.014'
+      version: '0.017'
+    -
+      class: Dist::Zilla::Plugin::DynamicPrereqs
+      name: 'via OptionalFeature (File)'
+      version: '0.008'
     -
       class: Dist::Zilla::Plugin::OptionalFeature
       config:
@@ -856,14 +894,18 @@ x_Dist_Zilla:
           prereqs:
             IO::AtomicFile: '0'
             IO::File: '0'
+          prompt: '1'
           require_develop: '1'
           type: requires
       name: File
-      version: '0.014'
+      version: '0.017'
     -
       class: Dist::Zilla::Plugin::Test::CheckBreaks
+      config:
+        Dist::Zilla::Plugin::Test::CheckBreaks:
+          conflicts_module: Moose::Conflicts
       name: Test::CheckBreaks
-      version: '0.009'
+      version: '0.011'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
@@ -906,6 +948,7 @@ x_Dist_Zilla:
       is_trial: '0'
     version: '5.020'
 x_authority: cpan:STEVAN
+x_authority_from_module: MooseX::Storage
 x_contributors:
   - 'Karen Etheridge <ether@cpan.org>'
   - 'Tomas Doran <bobtfish@bobtfish.net>'
@@ -925,3 +968,4 @@ x_contributors:
   - 'Jonathan Rockway <jon@jrock.us>'
   - 'Florian Ragwitz <rafl@debian.org>'
   - 'David Golden <dagolden@cpan.org>'
+x_permissions_from_module: MooseX::Storage

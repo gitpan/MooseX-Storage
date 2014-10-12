@@ -1,6 +1,6 @@
 package MooseX::Storage::Format::YAML;
 # ABSTRACT: A YAML serialization role
-$MooseX::Storage::Format::YAML::VERSION = '0.47';
+$MooseX::Storage::Format::YAML::VERSION = '0.48';
 use Moose::Role;
 
 # When I add YAML::LibYAML
@@ -39,7 +39,7 @@ MooseX::Storage::Format::YAML - A YAML serialization role
 
 =head1 VERSION
 
-version 0.47
+version 0.48
 
 =head1 SYNOPSIS
 

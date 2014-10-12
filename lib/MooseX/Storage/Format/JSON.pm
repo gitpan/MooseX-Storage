@@ -1,8 +1,8 @@
 package MooseX::Storage::Format::JSON;
 # ABSTRACT: A JSON serialization role
-$MooseX::Storage::Format::JSON::VERSION = '0.47';
+$MooseX::Storage::Format::JSON::VERSION = '0.48';
 use Moose::Role;
-use JSON::Any;
+use JSON::MaybeXS;
 use namespace::autoclean;
 
 requires 'pack';
@@ -10,14 +10,22 @@ requires 'unpack';
 
 sub thaw {
     my ( $class, $json, @args ) = @_;
+
+    # TODO ugh! this is surely wrong and should be fixed.
     utf8::encode($json) if utf8::is_utf8($json);
-    $class->unpack( JSON::Any->new->jsonToObj($json), @args );
+
+    $class->unpack( JSON::MaybeXS->new({ utf8 => 1 })->decode( $json), @args );
 }
 
 sub freeze {
     my ( $self, @args ) = @_;
-    my $json = JSON::Any->new(canonical => 1)->objToJson( $self->pack(@args) );
-    utf8::decode($json) if !utf8::is_utf8($json) and utf8::valid($json); # if it's valid utf8 mark it as such
+
+    my $json = JSON::MaybeXS->new({ utf8 => 1, canonical => 1 })->encode($self->pack(@args));
+
+    # if it's valid utf8 mark it as such
+    # TODO ugh! this is surely wrong and should be fixed.
+    utf8::decode($json) if !utf8::is_utf8($json) and utf8::valid($json);
+
     return $json;
 }
 
@@ -37,7 +45,7 @@ MooseX::Storage::Format::JSON - A JSON serialization role
 
 =head1 VERSION
 
-version 0.47
+version 0.48
 
 =head1 SYNOPSIS
 
